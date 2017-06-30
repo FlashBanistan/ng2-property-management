@@ -1,29 +1,21 @@
+<ng-sidebar-container style="height:100vh">
 
-  <!-- Container for sidebar(s) + page content -->
-    <ng-sidebar-container style="height:100vh">
+  <ng-sidebar 
+    [(opened)]="_opened"
+    mode="push"
+    autoCollapseWidth=500>
+    
+    <p>Sidebar contents</p>
+    <p>Sidebar contents</p>
+    <p>Sidebar contents</p>
+    <p>Sidebar contents</p>
+    <p>Sidebar contents</p>
 
-      <!-- A sidebar -->
-      <ng-sidebar 
-        [(opened)]="_opened"
-        mode="push"
-        autoCollapseWidth=500>
-        
-        <p>Sidebar contents</p>
-        <p>Sidebar contents</p>
-        <p>Sidebar contents</p>
-        <p>Sidebar contents</p>
-        <p>Sidebar contents</p>
+  </ng-sidebar>
 
-      </ng-sidebar>
+  <div ng-sidebar-content>
+    <router-outlet></router-outlet>
+    <button (click)="_toggleSidebar()">Toggle sidebar</button>
+  </div>
 
-      <!-- Page content -->
-      <div ng-sidebar-content>
-        <router-outlet></router-outlet>
-        <button (click)="_toggleSidebar()">Toggle sidebar</button>
-      </div>
-
-    </ng-sidebar-container>
-
-
-<!--<h1>App Component!</h1>
-<router-outlet></router-outlet>-->
+</ng-sidebar-container>
