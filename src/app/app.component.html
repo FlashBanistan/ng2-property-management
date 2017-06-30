@@ -1,6 +1,7 @@
 <ng-sidebar-container style="height:100vh">
 
-  <ng-sidebar 
+  <ng-sidebar
+    [sidebarClass]="'sidebar'"
     [(opened)]="_opened"
     mode="push"
     autoCollapseWidth=500>
@@ -9,15 +10,15 @@
       <span>HELLO</span>
       <p>{{ name }}</p>
     </div>
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column sidebar">
       <ul class="list-group">
-        <li class="list-group-item" routerLink="connect" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a>Home</a></li>
-        <li class="list-group-item" routerLink="connect/payments" routerLinkActive="active"><a>Payments</a></li>
-        <li class="list-group-item" routerLink="connect/maintenance" routerLinkActive="active"><a>Maintenance</a></li>
-        <li class="list-group-item" routerLink="connect/shared_documents" routerLinkActive="active"><a>Shared Documents</a></li>
-        <li class="list-group-item" routerLink="connect/info" routerLinkActive="active"><a>Property Info</a></li>
-        <li class="list-group-item" routerLink="connect/users/edit" routerLinkActive="active"><a>Account Profile</a></li>
-        <li class="list-group-item" routerLink="connect/help" routerLinkActive="active"><a>Help</a></li>
+        <li class="list-group-item sidebar-list-item" routerLink="connect" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a>Home</a></li>
+        <li class="list-group-item sidebar-list-item" routerLink="connect/payments" routerLinkActive="active"><a>Payments</a></li>
+        <li class="list-group-item sidebar-list-item" routerLink="connect/maintenance" routerLinkActive="active"><a>Maintenance</a></li>
+        <li class="list-group-item sidebar-list-item" routerLink="connect/shared_documents" routerLinkActive="active"><a>Shared Documents</a></li>
+        <li class="list-group-item sidebar-list-item" routerLink="connect/info" routerLinkActive="active"><a>Property Info</a></li>
+        <li class="list-group-item sidebar-list-item" routerLink="connect/users/edit" routerLinkActive="active"><a>Account Profile</a></li>
+        <li class="list-group-item sidebar-list-item" routerLink="connect/help" routerLinkActive="active"><a>Help</a></li>
       </ul>
     </div>
 
