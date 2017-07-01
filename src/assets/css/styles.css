@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+.page-container {
+    background-color: #F2F7FA;
+    color: #303030;
+}

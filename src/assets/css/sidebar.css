@@ -6,4 +6,14 @@
 .sidebar-list-item {
     background-color: #444950;
     color: #FFFFFF;
+    padding: 1rem;
+}
+
+.sidebar-list-link {
+    
+}
+
+.sidebar-active {
+    background-color: #F2F7FA;
+    color: #0E0E0E;
 }
