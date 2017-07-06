@@ -6,17 +6,15 @@
     mode="push"
     autoCollapseWidth=500>
     
-    <div class="row sidebar-list-item">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-12">
-            Hello
-          </div>
+    <div class="col-md-12 pt-2 pb-2">
+      <div class="row">
+        <div class="col-md-12">
+          Hello
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            {{ name }}
-          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          {{ name }}
         </div>
       </div>
     </div>
@@ -35,13 +33,18 @@
   </ng-sidebar>
 
   <div ng-sidebar-content>
-    <div class="d-flex flex-row justify-content-between aagn-items-center">
+    <!--<div class="d-flex flex-row justify-content-between aagn-items-center">
       <div class="justify-content-start">
         <img class="img-fluid" style="max-height: 60px" src="../assets/images/gmc_logo.png" alt="gmc logo">
       </div>
       <div class="justify-content-end">
         <a href="#">Logout</a>
       </div>
+    </div>-->
+
+    <div class="col-md-12 d-flex justify-content-between align-items-center">
+      <img src="../assets/images/gmc_logo.png" alt="logo" class="img-fluid pb-1 pt-1" style="max-height: 60px">
+      <a href="#">Logout</a>
     </div>
 
     <div class="container-fluid page-container">
