@@ -1,6 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
-.page-container {
-    background-color: #F2F7FA;
-    color: #303030;
+/* Import Angular Material Theme */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+md-card {
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+md-toolbar-row {
+  justify-content: space-between;
+}
+
+.done {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+}
+
+md-sidenav-container {
     height: 100vh;
 }
