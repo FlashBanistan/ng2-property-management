@@ -22,4 +22,4 @@ const routes: Routes = [
     ]
 })
 
-export class PaymentsModule { }
+export class LoginModule { }
