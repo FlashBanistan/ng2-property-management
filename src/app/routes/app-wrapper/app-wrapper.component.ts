@@ -8,6 +8,9 @@ import { Component } from "@angular/core";
 
 export class AppWrapperComponent {
 
+    public collapsible = true;
+    public collapsed = false;
+
     constructor() { }
 
 }

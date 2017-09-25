@@ -1,18 +1,45 @@
 <div class="main-container">
-    <header class="header">
-        ...
-    </header>
+    <header class="header-6">
+    <div class="branding">
+        <a href="..." class="nav-link">
+            <!-- <clr-icon shape="vm-bug"></clr-icon> -->
+            <span class="title">Property Management</span>
+        </a>
+    </div>
+    <div class="header-nav" [clr-nav-level]="2">
+        <a href="..." class="nav-link nav-icon">
+            <clr-icon shape="cloud"></clr-icon>
+        </a>
+        <a href="..." class="active nav-link nav-icon">
+            <clr-icon shape="folder"></clr-icon>
+        </a>
+    </div>
+    <div class="header-actions">
+        <clr-dropdown>
+            <button class="nav-icon" clrDropdownTrigger>
+                <clr-icon shape="user"></clr-icon>
+                <clr-icon shape="caret down"></clr-icon>
+            </button>
+            <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+                <a href="..." clrDropdownItem>About</a>
+                <a href="..." clrDropdownItem>Preferences</a>
+                <a href="..." clrDropdownItem>Log out</a>
+            </clr-dropdown-menu>
+        </clr-dropdown>
+    </div>
+</header>
     <div class="content-container">
         <div class="content-area">
             <router-outlet></router-outlet>
         </div>
-        <clr-vertical-nav>
-            <a clrVerticalNavLink routerLink="./charmander" routerLinkActive="active">Charmander</a>
-            <a clrVerticalNavLink routerLink="./jigglypuff" routerLinkActive="active">Jigglypuff</a>
-            <a clrVerticalNavLink routerLink="./pikachu" routerLinkActive="active">Pikachu</a>
-            <a clrVerticalNavLink routerLink="./raichu" routerLinkActive="active">Raichu</a>
-            <a clrVerticalNavLink routerLink="./snorlax" routerLinkActive="active">Snorlax</a>
-            <a clrVerticalNavLink routerLink="./credit" routerLinkActive="active">Credit</a>
+        <clr-vertical-nav [clr-nav-level]="1" [clrVerticalNavCollapsible]="collapsible" [(clrVerticalNavCollapsed)]="collapsed">
+            <a clrVerticalNavLink routerLink="/connect/home" routerLinkActive="active"><clr-icon clrVerticalNavIcon shape="home"></clr-icon> Home</a>
+            <a clrVerticalNavLink routerLink="/connect/payments" routerLinkActive="active"><clr-icon clrVerticalNavIcon shape="wallet"></clr-icon> Payments</a>
+            <a clrVerticalNavLink routerLink="/connect/maintenance" routerLinkActive="active"><clr-icon clrVerticalNavIcon shape="wrench"></clr-icon> Maintenance</a>
+            <a clrVerticalNavLink routerLink="/connect/shared_documents" routerLinkActive="active"><clr-icon clrVerticalNavIcon shape="file"></clr-icon> Shared Documents</a>
+            <a clrVerticalNavLink routerLink="/connect/info" routerLinkActive="active"><clr-icon clrVerticalNavIcon shape="info-standard"></clr-icon> Property Info</a>
+            <a clrVerticalNavLink routerLink="/connect/users/edit" routerLinkActive="active"><clr-icon clrVerticalNavIcon shape="user"></clr-icon> Account Profile</a>
+            <a clrVerticalNavLink routerLink="/connect/help" routerLinkActive="active"><clr-icon clrVerticalNavIcon shape="help"></clr-icon> Help</a>
         </clr-vertical-nav>
     </div>
 </div>
