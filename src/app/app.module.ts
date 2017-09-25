@@ -5,10 +5,12 @@ import { ClarityModule } from "clarity-angular";
 import { AppRouter } from './app-router.module';
 
 import { AppComponent } from './app.component';
+import { AppWrapperComponent } from './routes/app-wrapper/app-wrapper.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppWrapperComponent
   ],
   imports: [
     BrowserModule,
