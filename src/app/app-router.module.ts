@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'connect/info', loadChildren: './routes/property-info/property-info.module#PropertyInfoModule' },
   { path: 'connect/shared_documents', loadChildren: './routes/shared-documents/shared-documents.module#SharedDocumentsModule' },
   { path: 'connect/users/edit', loadChildren: './routes/account-profile/account-profile.module#AccountProfileModule' },
+  { path: 'login', loadChildren: './routes/login/login.module#LoginModule' },
 ]
 
 
