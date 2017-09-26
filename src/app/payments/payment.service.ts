@@ -16,6 +16,11 @@ export class PaymentService {
       .map((res:Response) => res.json());
   }
 
+  getPayment(url): Observable<Payment> {
+    return this.http.get(url)
+      .map((res:Response) => res.json() );
+  }
+
   // createHeaders() {
   //   var options = new RequestOptions({
   //     headers: new Headers({
