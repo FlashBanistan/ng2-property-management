@@ -1,2 +1,67 @@
 <h2>Home Component!</h2>
-<button (click)="testService()">Test Service</button>
+<div class="row">
+  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+      <!-- <div class="card-header">
+        Your current balance: 
+      </div> -->
+      <div class="card-block">
+        <div class="card-title d-flex justify-content-even">
+          <span>Your current balance: <span style="color: #60b515">$0.00</span></span>
+          <a href="..." role="tooltip" aria-haspopup="true"
+            class="tooltip tooltip-lg">
+            <clr-icon shape="info-circle" size="24"></clr-icon>
+            <span class="tooltip-content">Your balance reflects current and overdue charges, late fees, and any other charges as outlined in your rental agreement.</span>
+          </a>
+        </div>
+        <table class="table table-noborder">
+          <caption>October (next month)</caption>
+          <thead>
+            <tr>
+              <th class="text-left">Description</th>
+              <th class="text-right">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left">Rent</td>
+              <td class="text-right">$980.00</td>
+            </tr>
+            <tr>
+              <td class="text-left">Media Package</td>
+              <td class="text-right">$100.00</td>
+            </tr>
+            <tr>
+              <td class="text-left">Water/Sewer</td>
+              <td class="text-right">$60.00</td>
+            </tr>
+            <tr>
+              <td class="text-left">Trash</td>
+              <td class="text-right">$30.00</td>
+            </tr>
+            <tr>
+              <td class="text-left">Pet Rent</td>
+              <td class="text-right">$35.00</td>
+            </tr>
+            <tr>
+              <td class="text-left">Tenant Liability Insurance</td>
+              <td class="text-right">$9.50</td>
+            </tr>
+            <tr>
+              <td class="text-left">Credits & Payments</td>
+              <td class="text-right">$1214.50</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-sm btn-primary">
+                    Pay Now
+                </button>
+        <button class="btn btn-sm btn-secondary">
+                    Setup Autopay
+                </button>
+      </div>
+    </div>
+  </div>
+</div>

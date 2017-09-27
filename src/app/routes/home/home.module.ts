@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { ClarityModule } from "clarity-angular";
 import { Routes, RouterModule } from "@angular/router";
 
 import { HomeComponent } from "./home.component";
@@ -13,6 +14,7 @@ const routes: Routes = [
     ],
     imports: [
         RouterModule.forChild(routes),
+        ClarityModule.forChild()
     ],
     exports: [
         RouterModule,
