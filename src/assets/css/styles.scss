@@ -1,2 +1,42 @@
 @import url('../../../node_modules/clarity-icons/clarity-icons.min.css');
 @import url('../../../node_modules/clarity-ui/clarity-ui.min.css');
+
+/* Flexbox Classes */
+.d-flex {
+    display: flex !important;
+}
+.flex-row {
+    flex-direction: row !important;
+}
+.flex-column {
+    flex-direction: column !important;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+.justify-content-start {
+    justify-content: flex-start !important;
+}
+.justify-content-end {
+    justify-content: flex-end !important;
+}
+.justify-content-between {
+    justify-content: space-between !important;
+}
+.justify-content-around {
+    justify-content: space-around !important;
+}
+.justify-content-even {
+    justify-content: space-evenly !important;
+}
+
+/* Text Classes */
+.text-left {
+    text-align: left !important;
+}
+.text-right {
+    text-align: right !important;
+}
+.text-center {
+    text-align: center !important;
+}
