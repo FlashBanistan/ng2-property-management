@@ -16,7 +16,7 @@ export class HomeComponent {
         private chargeService: ChargeService,
     ) { }
 
-    private toggleModal() {
+    public toggleModal() {
         this.modalOpened = !this.modalOpened;
     }
 
