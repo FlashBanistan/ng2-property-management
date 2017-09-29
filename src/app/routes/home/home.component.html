@@ -1,103 +1,138 @@
 <!-- <h2>Home Component!</h2> -->
 <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <div class="card">
-        <div class="card-block d-flex flex-row flex-wrap justify-content-between">
-          <div class="mb-4">
-            <div class="card-title">
-              <clr-icon shape="map-marker" size="20"></clr-icon> Address
-            </div>
-            <div class="card-description">
-              10464 S. Jordan Gateway #235 <br> South Jordan, Utah 84095
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+      <div class="card-block d-flex flex-row flex-wrap justify-content-between">
+        <div class="">
+          <div class="card-title">
+            <h4>
+              <clr-icon shape="map-marker" size="20"></clr-icon> Address</h4>
+          </div>
+          <div class="card-description">
+            10464 S. Jordan Gateway #235 <br> South Jordan, Utah 84095
+          </div>
+        </div>
+        <div class="">
+          <div class="card-title">
+            <h4>
+              <clr-icon shape="wrench" size="20"></clr-icon> Maintenance</h4>
+          </div>
+          <div class="card-description">
+            No open requests <br>
+            <div class="btn-group btn-secondary">
+              <button class="btn btn-sm">Create</button>
+              <button class="btn btn-sm">View</button>
             </div>
           </div>
-          <div class="mb-4">
-            <div class="card-title">
-              <clr-icon shape="wrench" size="20"></clr-icon> Maintenance
-            </div>
-            <div class="card-description">
-              No open requests <br>
-              <div class="btn-group btn-secondary">
-                <button class="btn btn-sm">Create</button>
-                <button class="btn btn-sm">View</button>
-              </div>
-            </div>
+        </div>
+        <div>
+          <div class="card-title">
+            <h4>
+              <clr-icon shape="file" size="20"></clr-icon> Lease</h4>
           </div>
-          <div>
-            <div class="card-title">
-              <clr-icon shape="file" size="20"></clr-icon> Lease
-            </div>
-            <div class="card-description">
-              View lease <br>
-              <div class="btn-group btn-secondary">
-                <button class="btn btn-sm">Online</button>
-                <button class="btn btn-sm">Pdf</button>
-              </div>
+          <div class="card-description">
+            View lease <br>
+            <div class="btn-group btn-secondary">
+              <button class="btn btn-sm">Online</button>
+              <button class="btn btn-sm">Pdf</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-      <div class="card">
-        <div class="card-block">
-          <div class="card-title d-flex justify-content-even">
-            <span>Your current balance: <span style="color: #60b515">$0.00</span></span>
-            <a href="javascript:;" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md tooltip-top-left">
-              <clr-icon shape="info-circle" size="24"></clr-icon>
-              <span class="tooltip-content">Your balance reflects current and overdue charges, late fees, and any other charges as outlined in your rental agreement.</span>
-            </a>
-          </div>
-          <table class="table table-noborder">
-            <caption>October (next month)</caption>
-            <thead>
-              <tr>
-                <th class="text-left">Description</th>
-                <th class="text-right">Amount</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="text-left">Rent</td>
-                <td class="text-right">$980.00</td>
-              </tr>
-              <tr>
-                <td class="text-left">Media Package</td>
-                <td class="text-right">$100.00</td>
-              </tr>
-              <tr>
-                <td class="text-left">Water/Sewer</td>
-                <td class="text-right">$60.00</td>
-              </tr>
-              <tr>
-                <td class="text-left">Trash</td>
-                <td class="text-right">$30.00</td>
-              </tr>
-              <tr>
-                <td class="text-left">Pet Rent</td>
-                <td class="text-right">$35.00</td>
-              </tr>
-              <tr>
-                <td class="text-left">Tenant Liability Insurance</td>
-                <td class="text-right">$9.50</td>
-              </tr>
-              <tr>
-                <td class="text-left">Credits & Payments</td>
-                <td class="text-right">$1214.50</td>
-              </tr>
-            </tbody>
-          </table>
+  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 flex-sm-down-first">
+    <div class="card">
+      <div class="card-block">
+        <div class="card-title d-flex justify-content-even">
+          <span>Your current balance: <span style="color: #60b515">$0.00</span></span>
+          <a href="javascript:;" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md tooltip-top-left">
+            <clr-icon shape="info-circle" size="24"></clr-icon>
+            <span class="tooltip-content">Your balance reflects current and overdue charges, late fees, and any other charges as outlined in your rental agreement.</span>
+          </a>
         </div>
-        <div class="card-footer">
-          <button class="btn btn-sm btn-primary">
-                      Pay Now
-                  </button>
-          <button class="btn btn-sm btn-secondary">
-                      Setup Autopay
-                  </button>
-        </div>
+        <table class="table table-noborder">
+          <caption>October (next month)</caption>
+          <thead>
+            <tr>
+              <th class="text-left">Description</th>
+              <th class="text-right">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left">Rent</td>
+              <td class="text-right">$980.00</td>
+            </tr>
+            <tr>
+              <td class="text-left">Media Package</td>
+              <td class="text-right">$100.00</td>
+            </tr>
+            <tr>
+              <td class="text-left">Water/Sewer</td>
+              <td class="text-right">$60.00</td>
+            </tr>
+            <tr>
+              <td class="text-left">Trash</td>
+              <td class="text-right">$30.00</td>
+            </tr>
+            <tr>
+              <td class="text-left">Pet Rent</td>
+              <td class="text-right">$35.00</td>
+            </tr>
+            <tr>
+              <td class="text-left">Tenant Liability Insurance</td>
+              <td class="text-right">$9.50</td>
+            </tr>
+            <tr>
+              <td class="text-left">Credits & Payments</td>
+              <td class="text-right">$1214.50</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-sm btn-primary">
+                        Pay Now
+                    </button>
+        <button class="btn btn-sm btn-secondary">
+                        Setup Autopay
+                    </button>
       </div>
     </div>
   </div>
+  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+      <div class="card-img">
+        <img src="...">
+      </div>
+      <div class="card-block">
+        <h4 class="card-title">
+          <clr-icon shape="talk-bubbles" size="20"></clr-icon> Announcements</h4>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <span class="font-italic">Trash Notice</span> <br>
+          <small>Oct 25, 2017</small> <br>
+          <small>
+            <a href="javascript:;">Read...</a>
+          </small>
+        </li>
+        <li class="list-group-item">
+          <span class="font-italic">Pool closure</span> <br>
+          <small>Oct 10, 2017</small> <br>
+          <small>
+            <a href="javascript:;">Read...</a>
+          </small>
+        </li>
+        <li class="list-group-item">
+          <span class="font-italic">Trash collection delayed</span> <br>
+          <small>Sep 29, 2017</small> <br>
+          <small>
+            <a href="javascript:;">Read...</a>
+          </small>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
