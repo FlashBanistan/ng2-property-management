@@ -9,22 +9,16 @@ import { ChargeService } from '../../charges/charge.service';
 })
 
 export class HomeComponent {
+    public modalOpened: boolean = false;
 
     constructor(
         private paymentService: PaymentService,
         private chargeService: ChargeService,
     ) { }
 
-    testService() {
-        this.chargeService.getCharges()
-            .subscribe(
-                (res) => {
-                    console.log('Resposne: ', res);
-                },
-                (err) => {
-                    console.log('Error: ', err);
-                }
-            )
+    private toggleModal() {
+        this.modalOpened = !this.modalOpened;
     }
+
 
 }

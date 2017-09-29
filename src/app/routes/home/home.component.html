@@ -20,7 +20,7 @@
           <div class="card-description">
             No open requests <br>
             <div class="btn-group btn-secondary">
-              <button class="btn btn-sm">Create</button>
+              <button class="btn btn-sm" (click)="toggleModal()">Create</button>
               <button class="btn btn-sm">View</button>
             </div>
           </div>
@@ -103,9 +103,9 @@
   </div>
   <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
     <div class="card">
-      <div class="card-img">
+      <!-- <div class="card-img">
         <img src="...">
-      </div>
+      </div> -->
       <div class="card-block">
         <h4 class="card-title">
           <clr-icon shape="talk-bubbles" size="20"></clr-icon> Announcements</h4>
@@ -136,3 +136,15 @@
     </div>
   </div>
 </div>
+
+<!-- Create Maintanance Request Modal -->
+<clr-modal [(clrModalOpen)]="modalOpened" [clrModalStaticBackdrop]="true">
+    <h3 class="modal-title">I have a nice title</h3>
+    <div class="modal-body">
+        <p>But not much to say...</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="toggleModal()">Cancel</button>
+        <button type="button" class="btn btn-primary">Ok</button>
+    </div>
+</clr-modal>
