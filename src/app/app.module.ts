@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from "@angular/forms";
 import { ClarityModule } from "clarity-angular";
 import { AppRouter } from './app-router.module';
 
 import { AppComponent } from './app.component';
-import { AppWrapperComponent } from './routes/app-wrapper/app-wrapper.component';
+import { AppWrapperComponent } from './app-wrapper/app-wrapper.component';
 
 import { PaymentService } from './payments/payment.service';
 import { ChargeService } from './charges/charge.service';
@@ -24,6 +25,7 @@ import { AnnouncementService } from './announcements/announcement.service';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
     ClarityModule.forRoot(),
     AppRouter,
   ],

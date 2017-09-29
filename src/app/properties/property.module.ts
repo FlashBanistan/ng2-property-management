@@ -1,15 +1,15 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { PropertyInfoComponent } from "./property-info.component";
+import { PropertyComponent } from "./property.component";
 
 const routes: Routes = [
-    { path: '', component: PropertyInfoComponent }
+    { path: '', component: PropertyComponent }
 ]
 
 @NgModule({
     declarations: [
-        PropertyInfoComponent,
+        PropertyComponent,
     ],
     imports: [
         RouterModule.forChild(routes),
@@ -22,4 +22,4 @@ const routes: Routes = [
     ],
 })
 
-export class PropertyInfoModule { }
+export class PropertyModule { }

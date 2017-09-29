@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { PaymentService } from '../../payments/payment.service';
-import { ChargeService } from '../../charges/charge.service';
+import { PaymentService } from '../payments/payment.service';
+import { ChargeService } from '../charges/charge.service';
 
 @Component({
     selector: 'home-container',
