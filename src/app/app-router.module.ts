@@ -11,7 +11,7 @@ const routes: Routes = [
     { path: 'maintenance', loadChildren: './maintenance/maintenance.module#MaintenanceModule' },
     { path: 'payments', loadChildren: './payments/payments.module#PaymentsModule' },
     { path: 'property', loadChildren: './properties/property.module#PropertyModule' },
-    { path: 'shared_documents', loadChildren: './shared-documents/shared-documents.module#SharedDocumentsModule' },
+    { path: 'documents', loadChildren: './documents/documents.module#DocumentsModule' },
     { path: 'users/edit', loadChildren: './account-profile/account-profile.module#AccountProfileModule' },
   ] },
 
