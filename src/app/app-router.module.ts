@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: 'connect', component: AppWrapperComponent, children: [
     { path: 'home', loadChildren: './home/home.module#HomeModule' },
     { path: 'help', loadChildren: './help/help.module#HelpModule' },
-    // { path: 'info', loadChildren: './routes/property-info/property-info.module#PropertyInfoModule' },
     { path: 'maintenance', loadChildren: './maintenance/maintenance.module#MaintenanceModule' },
     { path: 'payments', loadChildren: './payments/payments.module#PaymentsModule' },
     { path: 'property', loadChildren: './properties/property.module#PropertyModule' },
