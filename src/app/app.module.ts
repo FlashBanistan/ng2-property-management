@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ClarityModule } from "clarity-angular";
 import { AppRouter } from './app-router.module';
 
@@ -11,6 +11,9 @@ import { AppWrapperComponent } from './routes/app-wrapper/app-wrapper.component'
 
 import { PaymentService } from './payments/payment.service';
 import { ChargeService } from './charges/charge.service';
+import { LeaseService } from './leases/lease.service';
+import { MaintenanceService } from './maintenance/maintenance.service';
+import { AnnouncementService } from './announcements/announcement.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { ChargeService } from './charges/charge.service';
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy},
     PaymentService,
-    ChargeService
+    ChargeService,
+    LeaseService,
+    MaintenanceService,
+    AnnouncementService,
   ],
   bootstrap: [AppComponent]
 })
