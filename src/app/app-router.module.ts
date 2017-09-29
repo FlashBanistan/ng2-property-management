@@ -12,7 +12,7 @@ const routes: Routes = [
     { path: 'payments', loadChildren: './payments/payments.module#PaymentsModule' },
     { path: 'property', loadChildren: './properties/property.module#PropertyModule' },
     { path: 'documents', loadChildren: './documents/documents.module#DocumentsModule' },
-    { path: 'users/edit', loadChildren: './account-profile/account-profile.module#AccountProfileModule' },
+    { path: 'account', loadChildren: './account/account.module#AccountModule' },
   ] },
 
 ]

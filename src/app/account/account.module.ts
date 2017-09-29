@@ -1,15 +1,15 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { AccountProfileComponent } from "./account-profile.component";
+import { AccountComponent } from "./account.component";
 
 const routes: Routes = [
-    { path: '', component: AccountProfileComponent }
+    { path: '', component: AccountComponent }
 ]
 
 @NgModule({
     declarations: [
-        AccountProfileComponent,
+        AccountComponent,
     ],
     imports: [
         RouterModule.forChild(routes),
@@ -22,4 +22,4 @@ const routes: Routes = [
     ],
 })
 
-export class AccountProfileModule { }
+export class AccountModule { }
