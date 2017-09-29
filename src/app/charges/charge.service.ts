@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Charge } from './charge';
 import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ChargeService {
-  private baseUrl: string = environment.baseUrl;
+  private chargesUrl: string = environment.baseUrl + '/charges';
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
-  getCharges(): Observable<Charge[]> {
-    return this.http.get(this.baseUrl + '/charges/')
-      .map((res:Response) => res.json() );
+  getCharges() {
+    return this.http.get(this.chargesUrl, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    })
   }
 
-  getCharge(url): Observable<Charge> {
-    return this.http.get(url)
-      .map((res:Response) => res.json() );
+  getCharge(id) {
+    return this.http.get(this.chargesUrl, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      params: new HttpParams().set('id', id),
+    })
   }
   
 }

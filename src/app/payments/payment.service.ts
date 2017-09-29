@@ -1,35 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Payment } from './payment';
 import { environment } from '../../environments/environment';
 
 @Injectable()
 export class PaymentService {
-  private baseUrl: string = environment.baseUrl;
+  private paymentsUrl: string = environment.baseUrl + '/payments';
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
-  getPayments(): Observable<Payment[]> {
-    return this.http.get(this.baseUrl + '/payments/')
-      .map((res:Response) => res.json());
+  getPayments() {
+    return this.http.get(this.paymentsUrl, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    })
   }
 
-  getPayment(url): Observable<Payment> {
-    return this.http.get(url)
-      .map((res:Response) => res.json() );
+  getPayment(id) {
+    return this.http.get(this.paymentsUrl, {
+      headers: new HttpHeaders().set('Content-Type', 'applicaation/json'),
+      params: new HttpParams().set('id', id),
+    })
   }
-
-  // createHeaders() {
-  //   var options = new RequestOptions({
-  //     headers: new Headers({
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json'
-  //     })
-  //   });
-  //   return options;
-  // }
-
   
 }

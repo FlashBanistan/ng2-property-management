@@ -1,19 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Lease } from './lease';
 import { environment } from '../../environments/environment';
 
 @Injectable()
 export class LeaseService {
-  private baseUrl: string = environment.baseUrl;
+  private leasesUrl: string = environment.baseUrl + '/leases';
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
-  getLease(url): Observable<Lease> {
-    return this.http.get(url)
-      .map((res:Response) => res.json() );
+  getLeases() {
+    return this.http.get(this.leasesUrl, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    })
+  }
+
+  getLease(id) {
+    return this.http.get(this.leasesUrl, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      params: new HttpParams().set('id', id),
+    })
   }
   
 }
