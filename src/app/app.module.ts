@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from "@angular/forms";
+// import { FormsModule } from "@angular/forms";
 import { ClarityModule } from "clarity-angular";
 import { AppRouter } from './app-router.module';
 
@@ -25,7 +25,7 @@ import { AnnouncementService } from './announcements/announcement.service';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule,
+    // FormsModule,
     ClarityModule.forRoot(),
     AppRouter,
   ],

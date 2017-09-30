@@ -13,4 +13,19 @@ export class MaintenanceCreateComponent {
         private maintenanceService: MaintenanceService,
     ) { }
 
+    model = {
+        'description':  '',
+    }
+
+    submitted: boolean = false;
+
+    onSubmit(): void {
+        // this.submitted = true;
+    }
+
+    // addNewEmployee(): void {
+    //     this.submitted = false;
+    //     this.model = new Employee(++this.id, "", "", "");
+    // }
+
 }
