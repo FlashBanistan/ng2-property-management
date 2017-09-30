@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms";
 import { Routes, RouterModule } from "@angular/router";
+import { ClarityModule } from "clarity-angular";
 
 import { MaintenanceComponent } from "./maintenance.component";
 import { MaintenanceListComponent } from "./maintenance-list/maintenance-list.component";
@@ -24,6 +25,7 @@ const routes: Routes = [
         CommonModule,
         FormsModule,
         RouterModule.forChild(routes),
+        ClarityModule.forChild(),
     ],
     exports: [
         RouterModule

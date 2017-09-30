@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Location } from '@angular/common';
 import { MaintenanceService } from '../../maintenance/maintenance.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { MaintenanceService } from '../../maintenance/maintenance.service';
 export class MaintenanceCreateComponent {
 
     constructor(
+        private _location: Location,
         private maintenanceService: MaintenanceService,
     ) { }
 
@@ -23,9 +25,8 @@ export class MaintenanceCreateComponent {
         // this.submitted = true;
     }
 
-    // addNewEmployee(): void {
-    //     this.submitted = false;
-    //     this.model = new Employee(++this.id, "", "", "");
-    // }
+    backClicked() {
+        this._location.back();
+    }
 
 }

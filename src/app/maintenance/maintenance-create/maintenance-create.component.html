@@ -20,19 +20,28 @@
 
 
 <form>
+  <a href="javascript:;" class="" (click)="backClicked()">Go Back</a>
   <section class="form-block">
-    <label>Create Maintenance Request</label>
-    <div class="form-group">
-      <label for="aForm_1">This is a form field</label>
-      <input type="text" id="aForm_1" placeholder="Enter value here" size="45">
-    </div>
+    <label>Request Maintenance</label>
     <div class="form-group">
       <label for="description">Description</label>
       <textarea id="description" name="description" rows="5" #description="ngModel" [(ngModel)]="model.description" required></textarea>
-      <span class="tooltip-content">
-            Description is Required.
-      </span>
     </div>
-    <button type="submit" class="btn btn-primary">Create</button>
+    <div class="form-group">
+      <label for="aForm_1">Photos</label>
+      <input type="file" accept="image/*" multiple id="aForm_1" placeholder="Enter value here" size="45">
+    </div>
+    <div class="form-group">
+      <label>Do we have permission to enter the unit with our key?</label>
+      <div class="radio-inline">
+        <input type="radio" name="gridRadios1" id="checkrads_11">
+        <label for="checkrads_11">Yes</label>
+      </div>
+      <div class="radio-inline">
+        <input type="radio" name="gridRadios1" id="checkrads_12">
+        <label for="checkrads_12">No</label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [clrLoading]="false">Submit</button>
   </section>
 </form>

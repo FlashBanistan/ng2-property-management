@@ -19,9 +19,9 @@
           </div>
           <div class="card-description">
             No open requests <br>
-            <div class="btn-group btn-secondary">
-              <button class="btn btn-sm" (click)="toggleModal()">Create</button>
-              <button class="btn btn-sm">View</button>
+            <div class="btn-secondary">
+              <button class="btn btn-sm btn-link" routerLink="/connect/maintenance/create">Create</button>
+              <button class="btn btn-sm btn-link">View</button>
             </div>
           </div>
         </div>
@@ -32,9 +32,9 @@
           </div>
           <div class="card-description">
             View lease <br>
-            <div class="btn-group btn-secondary">
-              <button class="btn btn-sm">Online</button>
-              <button class="btn btn-sm">Pdf</button>
+            <div class="btn-secondary">
+              <button class="btn btn-sm btn-link">Online</button>
+              <button class="btn btn-sm btn-link">Pdf</button>
             </div>
           </div>
         </div>
@@ -46,10 +46,10 @@
       <div class="card-block">
         <div class="card-title d-flex justify-content-even">
           <span>Your current balance: <span style="color: #60b515">$0.00</span></span>
-          <a href="javascript:;" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md tooltip-top-left">
+          <!-- <a href="javascript:;" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md tooltip-top-left">
             <clr-icon shape="info-circle" size="24"></clr-icon>
             <span class="tooltip-content">Your balance reflects current and overdue charges, late fees, and any other charges as outlined in your rental agreement.</span>
-          </a>
+          </a> -->
         </div>
         <table class="table table-noborder">
           <caption>October (next month)</caption>
