@@ -10,6 +10,7 @@ import { MaintenanceCreateComponent } from "./maintenance-create/maintenance-cre
 
 const routes: Routes = [
     { path: '', component: MaintenanceComponent, children: [
+        { path: '', redirectTo: 'list', pathMatch: 'full' },
         { path: 'list', component: MaintenanceListComponent },
         { path: 'create', component: MaintenanceCreateComponent },
     ] },
