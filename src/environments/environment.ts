@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   envName: 'dev',
-  baseUrl: 'http://gmc.localhost:8000/api'
+  baseUrl: 'http://gmc.aaronchesley.com/api'
 };

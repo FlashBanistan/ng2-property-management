@@ -10,16 +10,11 @@ export class AnnouncementService {
   constructor(private http: HttpClient) { }
 
   getAnnouncements() {
-    return this.http.get(this.announcementUrl, {
-        headers: new HttpHeaders().set('Content-Type', 'application/json'),
-    });
+    return this.http.get(this.announcementUrl);
   }
 
   getAnnouncement(id) {
-    return this.http.get(this.announcementUrl, {
-        headers: new HttpHeaders().set('Content-Type', 'application/json'),
-        params: new HttpParams().set('id', id),
-    });
+    return this.http.get(this.announcementUrl);
   }
   
 }

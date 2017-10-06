@@ -10,16 +10,13 @@ export class LeaseService {
   constructor(private http: HttpClient) { }
 
   getLeases() {
-    return this.http.get(this.leasesUrl, {
-      headers: new HttpHeaders().set('Content-Type', 'application/json'),
-    })
+    return this.http.get(this.leasesUrl);
   }
 
   getLease(id) {
-    return this.http.get(this.leasesUrl, {
-      headers: new HttpHeaders().set('Content-Type', 'application/json'),
-      params: new HttpParams().set('id', id),
-    })
+    const url = this.leasesUrl + '/' + id + '/';
+    return this.http.get(url);
   }
+  
   
 }

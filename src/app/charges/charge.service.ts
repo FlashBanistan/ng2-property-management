@@ -10,16 +10,11 @@ export class ChargeService {
   constructor(private http: HttpClient) { }
 
   getCharges() {
-    return this.http.get(this.chargesUrl, {
-      headers: new HttpHeaders().set('Content-Type', 'application/json'),
-    })
+    return this.http.get(this.chargesUrl);
   }
 
   getCharge(id) {
-    return this.http.get(this.chargesUrl, {
-      headers: new HttpHeaders().set('Content-Type', 'application/json'),
-      params: new HttpParams().set('id', id),
-    })
+    return this.http.get(this.chargesUrl);
   }
   
 }

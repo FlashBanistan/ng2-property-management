@@ -10,16 +10,11 @@ export class PaymentService {
   constructor(private http: HttpClient) { }
 
   getPayments() {
-    return this.http.get(this.paymentsUrl, {
-      headers: new HttpHeaders().set('Content-Type', 'application/json'),
-    })
+    return this.http.get(this.paymentsUrl);
   }
 
   getPayment(id) {
-    return this.http.get(this.paymentsUrl, {
-      headers: new HttpHeaders().set('Content-Type', 'applicaation/json'),
-      params: new HttpParams().set('id', id),
-    })
+    return this.http.get(this.paymentsUrl);
   }
   
 }

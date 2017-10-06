@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent, HttpResponse }
-  from '@angular/common/http';
-
+import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
 
 @Injectable()
 export class HeadersInterceptor implements HttpInterceptor {
@@ -12,12 +9,13 @@ export class HeadersInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
 
-    return next.handle(req).do(evt => {
-      if (evt instanceof HttpResponse) {
-        console.log('---> status:', evt.status);
-        console.log('---> filter:', req.params.get('filter'));
-      }
+    // Headers object is immutable so you need to clone it
+    // in order to make changes.
+    const _request = req.clone({
+      headers: req.headers.set('Content-Type', 'application/json'),
     });
+    // Pass the cloned request instead of the original request.
+    return next.handle(_request);
 
   }
 }

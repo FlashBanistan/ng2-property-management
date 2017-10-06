@@ -10,16 +10,11 @@ export class MaintenanceService {
   constructor(private http: HttpClient) { }
 
   getMaintenanceList() {
-    return this.http.get(this.maintenanceUrl, {
-        headers: new HttpHeaders().set('Content-Type', 'application/json'),
-    });
+    return this.http.get(this.maintenanceUrl);
   }
 
   getMaintenanceItem(id) {
-    return this.http.get(this.maintenanceUrl, {
-        headers: new HttpHeaders().set('Content-Type', 'application/json'),
-        params: new HttpParams().set('id', id),
-    });
+    return this.http.get(this.maintenanceUrl);
   }
   
 }
