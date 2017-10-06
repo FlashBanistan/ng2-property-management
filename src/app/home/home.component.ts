@@ -19,15 +19,7 @@ export class HomeComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.leaseService.getLease(1)
-            .subscribe(
-                (res) => {
-                    console.log('Results: ', res);
-                },
-                (err) => {
-                    console.log('Error: ', err);
-                }
-            )
+        
     }
 
     public toggleModal() {
