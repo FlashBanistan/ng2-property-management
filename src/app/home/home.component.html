@@ -118,25 +118,11 @@
           <clr-icon shape="talk-bubbles" size="20"></clr-icon> Announcements</h4>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <span class="font-weight-bold">Trash Notice</span> <br>
-          <small class="font-italic">Oct 25, 2017</small> <br>
-          <small>
-            <a href="javascript:;">Read...</a>
-          </small>
-        </li>
-        <li class="list-group-item">
-          <span class="font-weight-bold">Pool closure</span> <br>
-          <small class="font-italic">Oct 10, 2017</small> <br>
-          <small>
-            <a href="javascript:;">Read...</a>
-          </small>
-        </li>
-        <li class="list-group-item">
-          <span class="font-weight-bold">Trash collection delayed</span> <br>
-          <small class="font-italic">Sep 29, 2017</small> <br>
-          <small>
-            <a href="javascript:;">Read...</a>
+        <li class="list-group-item" *ngFor="let announcement of announcements">
+          <span class="font-weight-bold">{{ announcement.title }}</span> <br>
+          <small class="font-italic">{{ announcement.created_on | date }}</small> <br>
+          <small class="pointer" (click)="toggleAnnouncement(announcement)">
+            Read...
           </small>
         </li>
       </ul>
@@ -145,13 +131,12 @@
 </div>
 
 <!-- Create Maintanance Request Modal -->
-<clr-modal [(clrModalOpen)]="modalOpened" [clrModalStaticBackdrop]="true">
-  <h3 class="modal-title">I have a nice title</h3>
+<clr-modal [(clrModalOpen)]="announcementOpened" [clrModalStaticBackdrop]="true">
+  <h3 class="modal-title">{{ selectedAnnouncement?.title }}</h3>
   <div class="modal-body">
-    <p>But not much to say...</p>
+    <p>{{ selectedAnnouncement?.body }}</p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline" (click)="toggleModal()">Cancel</button>
-    <button type="button" class="btn btn-primary">Ok</button>
+    <button type="button" class="btn btn-primary" (click)="toggleAnnouncement(null)">Back</button>
   </div>
 </clr-modal>

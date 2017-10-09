@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { PaymentService } from '../payments/payment.service';
 import { ChargeService } from '../charges/charge.service';
 import { LeaseService } from '../leases/lease.service';
+import { AnnouncementService } from '../announcements/announcement.service';
 
 @Component({
     selector: 'home-container',
@@ -10,20 +11,29 @@ import { LeaseService } from '../leases/lease.service';
 })
 
 export class HomeComponent implements OnInit {
-    public modalOpened: boolean = false;
+    public announcements: any;
+    public announcementOpened: boolean = false;
+    public selectedAnnouncement: any;
 
     constructor(
         private paymentService: PaymentService,
         private chargeService: ChargeService,
         private leaseService: LeaseService,
+        private announcementService: AnnouncementService,
     ) { }
 
     ngOnInit() {
-        
+        this.getAnnouncements();
     }
 
-    public toggleModal() {
-        this.modalOpened = !this.modalOpened;
+    getAnnouncements() {
+        this.announcementService.getAnnouncements()
+            .subscribe(res => this.announcements = res);
+    }
+
+    toggleAnnouncement(announcement) {
+        this.selectedAnnouncement = announcement;
+        this.announcementOpened = !this.announcementOpened;
     }
 
 
