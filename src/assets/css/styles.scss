@@ -3,3 +3,25 @@
 @import url('./_flex.scss');
 @import url('./_utility.scss');
 @import url('./_text.scss');
+
+$red: #F52F22; $pink: #F1428A; $purple: #781DA0;
+$ultramarine: #343DAC; $blue: #0065AB; $cyan: #00B7D6;
+$teal: #00968B; $green: #48960C; $yellow: #FFDC0B;
+$orange: #F57600; $red-orange: #EE4A08;
+$warm-grey: #80746D; $neutral-grey: #747474; $cool-grey: #61717D;
+
+.announcement {
+    background-color: $yellow;
+}
+
+.address {
+    background-color: $red !important;
+}
+
+.maintenance {
+    background-color: $ultramarine !important;
+}
+
+.lease {
+    background-color: $green !important;
+}

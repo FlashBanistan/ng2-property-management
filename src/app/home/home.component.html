@@ -1,42 +1,49 @@
 <!-- <h2>Home Component!</h2> -->
 <div class="row">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 d-flex">
     <div class="card">
-      <div class="card-block d-flex flex-row flex-wrap justify-content-between">
-        <div class="">
-          <div class="card-title">
-            <h4>
-              <clr-icon shape="map-marker" size="20"></clr-icon> Address</h4>
-          </div>
-          <div class="card-description">
-            10464 S. Jordan Gateway #235 <br> South Jordan, Utah 84095
-          </div>
+      <div class="card-header">
+        <clr-icon shape="map-marker" size="20"></clr-icon> Address
+      </div>
+      <div class="card-block">
+        <div class="card-description">
+          10464 S. Jordan Gateway #235 <br> South Jordan, Utah 84095
         </div>
-        <div class="">
-          <div class="card-title">
-            <h4>
-              <clr-icon shape="wrench" size="20"></clr-icon> Maintenance</h4>
-          </div>
-          <div class="card-description">
-            No open requests <br>
-            <div class="btn-secondary">
-              <button class="btn btn-sm btn-link" routerLink="/connect/maintenance/create">Create</button>
-              <button class="btn btn-sm btn-link">View</button>
-            </div>
-          </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 d-flex">
+    <div class="card">
+      <div class="card-header">
+        <clr-icon shape="wrench" size="20"></clr-icon> Maintenance
+      </div>
+      <div class="card-block">
+        <div class="card-description">
+          No open requests.
         </div>
-        <div>
-          <div class="card-title">
-            <h4>
-              <clr-icon shape="file" size="20"></clr-icon> Lease</h4>
-          </div>
-          <div class="card-description">
-            View lease <br>
-            <div class="btn-secondary">
-              <button class="btn btn-sm btn-link">Online</button>
-              <button class="btn btn-sm btn-link">Pdf</button>
-            </div>
-          </div>
+      </div>
+      <div class="card-footer">
+        <div class="btn-secondary">
+          <button class="btn btn-sm btn-link" routerLink="/connect/maintenance/create">Create</button>
+          <button class="btn btn-sm btn-link">View</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 d-flex">
+    <div class="card">
+      <div class="card-header">
+        <clr-icon shape="file" size="20"></clr-icon> Lease
+      </div>
+      <div class="card-block">
+        <div class="card-description">
+          View Lease
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="btn-secondary">
+          <button class="btn btn-sm btn-link">Online</button>
+          <button class="btn btn-sm btn-link">Pdf</button>
         </div>
       </div>
     </div>
@@ -139,12 +146,12 @@
 
 <!-- Create Maintanance Request Modal -->
 <clr-modal [(clrModalOpen)]="modalOpened" [clrModalStaticBackdrop]="true">
-    <h3 class="modal-title">I have a nice title</h3>
-    <div class="modal-body">
-        <p>But not much to say...</p>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline" (click)="toggleModal()">Cancel</button>
-        <button type="button" class="btn btn-primary">Ok</button>
-    </div>
+  <h3 class="modal-title">I have a nice title</h3>
+  <div class="modal-body">
+    <p>But not much to say...</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline" (click)="toggleModal()">Cancel</button>
+    <button type="button" class="btn btn-primary">Ok</button>
+  </div>
 </clr-modal>
