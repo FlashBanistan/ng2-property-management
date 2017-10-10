@@ -25,7 +25,7 @@ export class MaintenanceCreateComponent {
         // this.submitted = true;
     }
 
-    backClicked() {
+    goBack() {
         this._location.back();
     }
 
