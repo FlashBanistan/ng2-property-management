@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Login } from "./login";
 
 @Component({
     selector: 'login-container',
@@ -8,5 +9,11 @@ import { Component } from "@angular/core";
 
 export class LoginComponent {
 
+    public loginModel: Login = new Login(); 
+
     constructor() { }
+
+    onSubmit() {
+        console.log(this.loginModel);
+    }
 }

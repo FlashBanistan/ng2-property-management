@@ -4,7 +4,7 @@ import { AppWrapperComponent } from './app-wrapper/app-wrapper.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'connect', pathMatch: 'full' },
-  { path: 'login', loadChildren: './login/login.module#LoginModule' },
+  { path: 'login', loadChildren: './authentication/login.module#LoginModule' },
   { path: 'connect', component: AppWrapperComponent, children: [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', loadChildren: './home/home.module#HomeModule' },

@@ -1,5 +1,5 @@
 <div class="login-wrapper">
-    <form class="login">
+    <form class="login" #loginForm="ngForm" (ngSubmit)="onSubmit()">
         <label class="title">
             <h3 class="welcome">Welcome to</h3>
             Company Product Name
@@ -12,8 +12,8 @@
                     <option>Administrator</option>
                 </select>
             </div>
-            <input class="username" type="text" id="login_username" placeholder="Username">
-            <input class="password" type="password" id="login_password" placeholder="Password">
+            <input class="username" type="text" id="email" placeholder="Username" name="email" #email="ngModel" [(ngModel)]="loginModel.email">
+            <input class="password" type="password" id="password" placeholder="Password" name="password" #password="ngModel" [(ngModel)]="loginModel.password">
             <div class="checkbox">
                 <input type="checkbox" id="rememberme">
                 <label for="rememberme">
