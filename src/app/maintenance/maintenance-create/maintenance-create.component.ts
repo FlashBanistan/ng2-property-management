@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Location } from '@angular/common';
+import { Maintenance } from '../../maintenance/maintenance';
 import { MaintenanceService } from '../../maintenance/maintenance.service';
 
 @Component({
@@ -10,19 +11,21 @@ import { MaintenanceService } from '../../maintenance/maintenance.service';
 
 export class MaintenanceCreateComponent {
 
+    model = new Maintenance();
+
     constructor(
         private _location: Location,
-        private maintenanceService: MaintenanceService,
+        private _maintenanceService: MaintenanceService,
     ) { }
 
-    model = {
-        'description':  '',
-    }
-
-    submitted: boolean = false;
-
     onSubmit(): void {
-        // this.submitted = true;
+        this._maintenanceService.createMaintenanceItem(this.model)
+            .subscribe(
+                (res) => {
+                    this.model = new Maintenance();
+                },
+                (err) => {console.log('Failure: ', err)}
+            )
     }
 
     goBack() {

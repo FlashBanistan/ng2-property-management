@@ -1,9 +1,11 @@
 export class Maintenance {
-    amount: number;
-    created_on: string;
-    date_due: string;
-    description: string;
-    lease: any;
-    name: string;
-    url: string;
+  constructor() {
+    this.permission_to_enter = true;
   }
+  description: string;
+  permission_to_enter: boolean;
+  created_on: string;
+  created_by: string;
+  lease: any;
+  url: string;
+}

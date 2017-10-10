@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Maintenance } from './maintenance';
 import { environment } from '../../environments/environment';
 
@@ -15,6 +15,10 @@ export class MaintenanceService {
 
   getMaintenanceItem(id) {
     return this.http.get(this.maintenanceUrl);
+  }
+
+  createMaintenanceItem(item) {
+    return this.http.post<any>(this.maintenanceUrl, JSON.stringify(item));
   }
   
 }
