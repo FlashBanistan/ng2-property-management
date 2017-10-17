@@ -1,7 +1,8 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { ClarityModule } from "clarity-angular";
+import { SharedModule } from "../shared/shared.module";
 
+import { PaymentService } from "./payment.service";
 import { PaymentsComponent } from "./payments.component";
 
 const routes: Routes = [
@@ -14,13 +15,13 @@ const routes: Routes = [
     ],
     imports: [
         RouterModule.forChild(routes),
-        ClarityModule.forChild(),
+        SharedModule,
     ],
     exports: [
         RouterModule,
     ],
     providers: [
-
+        PaymentService,
     ]
 })
 

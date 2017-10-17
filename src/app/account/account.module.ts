@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { SharedModule } from "../shared/shared.module";
 
 import { AccountComponent } from "./account.component";
 import { AccountDetailComponent } from "./account-detail/account-detail.component";
@@ -27,6 +28,7 @@ const routes: Routes = [
     ],
     imports: [
         RouterModule.forChild(routes),
+        SharedModule,
     ],
     exports: [
         RouterModule,

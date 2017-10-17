@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { ClarityModule } from "clarity-angular";
 import { Routes, RouterModule } from "@angular/router";
+import { SharedModule } from "../shared/shared.module";
 
 import { HomeComponent } from "./home.component";
 
@@ -15,8 +14,7 @@ const routes: Routes = [
     ],
     imports: [
         RouterModule.forChild(routes),
-        ClarityModule.forChild(),
-        CommonModule,
+        SharedModule,
     ],
     exports: [
         RouterModule,

@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { PaymentService } from '../payments/payment.service';
 import { ChargeService } from '../charges/charge.service';
 import { LeaseService } from '../leases/lease.service';
 import { AnnouncementService } from '../announcements/announcement.service';
@@ -16,7 +15,6 @@ export class HomeComponent implements OnInit {
     public selectedAnnouncement: any;
 
     constructor(
-        private paymentService: PaymentService,
         private chargeService: ChargeService,
         private leaseService: LeaseService,
         private announcementService: AnnouncementService,

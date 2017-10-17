@@ -12,10 +12,8 @@ import { HeadersInterceptor } from './shared/interceptors/headers.interceptor';
 import { AppComponent } from './app.component';
 import { AppWrapperComponent } from './app-wrapper/app-wrapper.component';
 
-import { PaymentService } from './payments/payment.service';
 import { ChargeService } from './charges/charge.service';
 import { LeaseService } from './leases/lease.service';
-import { MaintenanceService } from './maintenance/maintenance.service';
 import { AnnouncementService } from './announcements/announcement.service';
 
 @NgModule({
@@ -36,10 +34,8 @@ import { AnnouncementService } from './announcements/announcement.service';
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy},
     { provide: HTTP_INTERCEPTORS, useClass: HeadersInterceptor, multi: true },
-    PaymentService,
     ChargeService,
     LeaseService,
-    MaintenanceService,
     AnnouncementService,
   ],
   bootstrap: [AppComponent]
