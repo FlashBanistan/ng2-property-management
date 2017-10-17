@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { CoreModule } from './core.module';
 
 import { AppRouter } from './app-router.module';
@@ -16,7 +14,6 @@ import { AppWrapperComponent } from './app-wrapper/app-wrapper.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     CoreModule,
     AppRouter,
   ],

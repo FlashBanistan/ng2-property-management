@@ -1,5 +1,6 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';   
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
@@ -17,6 +18,7 @@ import { HeadersInterceptor } from './shared/interceptors/headers.interceptor';
     ],
     imports: [
         CommonModule,
+        BrowserAnimationsModule,        
         HttpClientModule,
         SharedModule,
     ],
