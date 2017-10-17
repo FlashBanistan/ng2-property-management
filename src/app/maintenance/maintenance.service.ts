@@ -5,7 +5,7 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class MaintenanceService {
-  private maintenanceUrl: string = environment.baseUrl + '/maintenance';
+  private maintenanceUrl: string = environment.baseUrl + '/maintenance/';
 
   constructor(private http: HttpClient) { }
 
@@ -18,7 +18,7 @@ export class MaintenanceService {
   }
 
   createMaintenanceItem(item) {
-    return this.http.post<any>(this.maintenanceUrl, JSON.stringify(item));
+    return this.http.post<any>(this.maintenanceUrl, item);
   }
   
 }
