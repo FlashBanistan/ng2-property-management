@@ -2,7 +2,6 @@ import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { SharedModule } from "./shared/shared.module";
 
@@ -28,7 +27,6 @@ import { HeadersInterceptor } from './shared/interceptors/headers.interceptor';
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: HeadersInterceptor, multi: true },
-        { provide: LocationStrategy, useClass: HashLocationStrategy},
         ChargeService,
         LeaseService,
         AnnouncementService,

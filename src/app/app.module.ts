@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { CoreModule } from './core.module';
 
 import { AppRouter } from './app-router.module';
@@ -20,7 +21,7 @@ import { AppWrapperComponent } from './app-wrapper/app-wrapper.component';
   exports: [
   ],
   providers: [
-    
+    { provide: LocationStrategy, useClass: HashLocationStrategy},
   ],
   bootstrap: [AppComponent]
 })
