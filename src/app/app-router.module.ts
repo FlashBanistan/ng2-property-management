@@ -4,16 +4,16 @@ import { AppWrapperComponent } from './app-wrapper/app-wrapper.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'connect', pathMatch: 'full' },
-  { path: 'login', loadChildren: './authentication/login.module#LoginModule' },
+  { path: 'login', loadChildren: () => import('./authentication/login.module').then(m => m.LoginModule) },
   { path: 'connect', component: AppWrapperComponent, children: [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', loadChildren: './home/home.module#HomeModule' },
-    { path: 'help', loadChildren: './help/help.module#HelpModule' },
-    { path: 'maintenance', loadChildren: './maintenance/maintenance.module#MaintenanceModule' },
-    { path: 'payments', loadChildren: './payments/payments.module#PaymentsModule' },
-    { path: 'property', loadChildren: './properties/property.module#PropertyModule' },
-    { path: 'documents', loadChildren: './documents/documents.module#DocumentsModule' },
-    { path: 'account', loadChildren: './account/account.module#AccountModule' },
+    { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+    { path: 'help', loadChildren: () => import('./help/help.module').then(m => m.HelpModule) },
+    { path: 'maintenance', loadChildren: () => import('./maintenance/maintenance.module').then(m => m.MaintenanceModule) },
+    { path: 'payments', loadChildren: () => import('./payments/payments.module').then(m => m.PaymentsModule) },
+    { path: 'property', loadChildren: () => import('./properties/property.module').then(m => m.PropertyModule) },
+    { path: 'documents', loadChildren: () => import('./documents/documents.module').then(m => m.DocumentsModule) },
+    { path: 'account', loadChildren: () => import('./account/account.module').then(m => m.AccountModule) },
   ] },
 
 ]
