@@ -1,21 +1,10 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
-import { ClarityModule } from "clarity-angular";
-
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-    declarations: [
-    ],
-    imports: [
-        CommonModule,
-        ClarityModule.forChild(),
-    ],
-    exports: [
-        CommonModule,
-        FormsModule,
-        ClarityModule,
-    ],
+  declarations: [],
+  imports: [CommonModule],
+  exports: [CommonModule, FormsModule]
 })
-
-export class SharedModule { }
+export class SharedModule {}

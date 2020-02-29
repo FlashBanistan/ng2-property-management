@@ -14,19 +14,40 @@
               </div> -->
               <div class="form-group">
                 <label class="font-weight-bold required" for="description">Description</label>
-                <textarea #description="ngModel" id="description" name="description" rows="5" #description="ngModel" [(ngModel)]="model.description"
-                  required></textarea>
+                <textarea
+                  #description="ngModel"
+                  id="description"
+                  name="description"
+                  rows="5"
+                  #description="ngModel"
+                  [(ngModel)]="model.description"
+                  required
+                ></textarea>
               </div>
               <div class="form-group">
                 <label class="font-weight-bold required">Permission to enter: </label>
                 <div class="radio-inline">
-                  <input type="radio" ng-control="permission_to_enter" [(ngModel)]="model.permission_to_enter" [value]="true" name="permission_yes"
-                    id="permission_yes" required>
+                  <input
+                    type="radio"
+                    ng-control="permission_to_enter"
+                    [(ngModel)]="model.permission_to_enter"
+                    [value]="true"
+                    name="permission_yes"
+                    id="permission_yes"
+                    required
+                  />
                   <label for="permission_yes">Yes</label>
                 </div>
                 <div class="radio-inline">
-                  <input type="radio" ng-control="permission_to_enter" [(ngModel)]="model.permission_to_enter" [value]="false" name="permission_no"
-                    id="permission_no" required>
+                  <input
+                    type="radio"
+                    ng-control="permission_to_enter"
+                    [(ngModel)]="model.permission_to_enter"
+                    [value]="false"
+                    name="permission_no"
+                    id="permission_no"
+                    required
+                  />
                   <label for="permission_no">No</label>
                 </div>
               </div>

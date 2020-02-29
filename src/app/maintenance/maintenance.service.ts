@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 export class MaintenanceService {
   private maintenanceUrl: string = environment.baseUrl + '/maintenance/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getMaintenanceList() {
     return this.http.get(this.maintenanceUrl);
@@ -20,5 +20,4 @@ export class MaintenanceService {
   createMaintenanceItem(item) {
     return this.http.post<any>(this.maintenanceUrl, item);
   }
-  
 }

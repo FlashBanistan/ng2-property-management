@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 export class ChargeService {
   private chargesUrl: string = environment.baseUrl + '/charges';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getCharges() {
     return this.http.get(this.chargesUrl);
@@ -16,5 +16,4 @@ export class ChargeService {
   getCharge(id) {
     return this.http.get(this.chargesUrl);
   }
-  
 }

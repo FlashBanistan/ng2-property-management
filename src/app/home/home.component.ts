@@ -1,38 +1,28 @@
-import { Component, OnInit } from "@angular/core";
-import { ChargeService } from '../charges/charge.service';
-import { LeaseService } from '../leases/lease.service';
+import { Component, OnInit } from '@angular/core';
 import { AnnouncementService } from '../announcements/announcement.service';
 
 @Component({
-    selector: 'home-container',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss']
+  selector: 'home-container',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-
 export class HomeComponent implements OnInit {
-    public announcements: any;
-    public announcementOpened: boolean = false;
-    public selectedAnnouncement: any;
+  public announcements: any;
+  public announcementOpened = false;
+  public selectedAnnouncement: any;
 
-    constructor(
-        private chargeService: ChargeService,
-        private leaseService: LeaseService,
-        private announcementService: AnnouncementService,
-    ) { }
+  constructor(private announcementService: AnnouncementService) {}
 
-    ngOnInit() {
-        this.getAnnouncements();
-    }
+  ngOnInit() {
+    this.getAnnouncements();
+  }
 
-    getAnnouncements() {
-        this.announcementService.getAnnouncements()
-            .subscribe(res => this.announcements = res);
-    }
+  getAnnouncements() {
+    this.announcementService.getAnnouncements().subscribe(res => (this.announcements = res));
+  }
 
-    toggleAnnouncement(announcement) {
-        this.selectedAnnouncement = announcement;
-        this.announcementOpened = !this.announcementOpened;
-    }
-
-
+  toggleAnnouncement(announcement) {
+    this.selectedAnnouncement = announcement;
+    this.announcementOpened = !this.announcementOpened;
+  }
 }

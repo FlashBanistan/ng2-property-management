@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 export class LeaseService {
   private leasesUrl: string = environment.baseUrl + '/leases';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getLeases() {
     return this.http.get(this.leasesUrl);
@@ -17,6 +17,4 @@ export class LeaseService {
     const url = this.leasesUrl + '/' + id + '/';
     return this.http.get(url);
   }
-  
-  
 }

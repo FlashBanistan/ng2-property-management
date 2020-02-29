@@ -2,21 +2,18 @@
 <div class="row">
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 d-flex">
     <div class="card">
-      <div class="card-header">
-        <clr-icon shape="map-marker" size="20"></clr-icon> Address
-      </div>
+      <div class="card-header">Address</div>
       <div class="card-block">
         <div class="card-description">
-          10464 S. Jordan Gateway #235 <br> South Jordan, Utah 84095
+          10464 S. Jordan Gateway #235 <br />
+          South Jordan, Utah 84095
         </div>
       </div>
     </div>
   </div>
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 d-flex">
     <div class="card">
-      <div class="card-header">
-        <clr-icon shape="wrench" size="20"></clr-icon> Maintenance
-      </div>
+      <div class="card-header">Maintenance</div>
       <div class="card-block">
         <div class="card-description">
           No open requests.
@@ -32,9 +29,7 @@
   </div>
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 d-flex">
     <div class="card">
-      <div class="card-header">
-        <clr-icon shape="file" size="20"></clr-icon> Lease
-      </div>
+      <div class="card-header">Lease</div>
       <div class="card-block">
         <div class="card-description">
           View Lease
@@ -59,7 +54,9 @@
           </a> -->
         </div>
         <table class="table table-noborder">
-          <caption>October (next month)</caption>
+          <caption>
+            October (next month)
+          </caption>
           <thead>
             <tr>
               <th class="text-left">Description</th>
@@ -100,11 +97,11 @@
       </div>
       <div class="card-footer">
         <button class="btn btn-sm btn-primary">
-                        Pay Now
-                    </button>
+          Pay Now
+        </button>
         <button class="btn btn-sm btn-secondary">
-                        Setup Autopay
-                    </button>
+          Setup Autopay
+        </button>
       </div>
     </div>
   </div>
@@ -114,13 +111,12 @@
         <img src="...">
       </div> -->
       <div class="card-block">
-        <h4 class="card-title">
-          <clr-icon shape="talk-bubbles" size="20"></clr-icon> Announcements</h4>
+        <h4 class="card-title">Announcements</h4>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item" *ngFor="let announcement of announcements">
-          <span class="font-weight-bold">{{ announcement.title }}</span> <br>
-          <small class="font-italic">{{ announcement.created_on | date }}</small> <br>
+          <span class="font-weight-bold">{{ announcement.title }}</span> <br />
+          <small class="font-italic">{{ announcement.created_on | date }}</small> <br />
           <small class="pointer" (click)="toggleAnnouncement(announcement)">
             Read...
           </small>
@@ -131,7 +127,7 @@
 </div>
 
 <!-- Create Maintanance Request Modal -->
-<clr-modal [(clrModalOpen)]="announcementOpened" [clrModalStaticBackdrop]="true">
+<!-- <clr-modal [(clrModalOpen)]="announcementOpened" [clrModalStaticBackdrop]="true">
   <h3 class="modal-title">{{ selectedAnnouncement?.title }}</h3>
   <div class="modal-body">
     <p>{{ selectedAnnouncement?.body }}</p>
@@ -139,4 +135,4 @@
   <div class="modal-footer">
     <button type="button" class="btn btn-primary" (click)="toggleAnnouncement(null)">Back</button>
   </div>
-</clr-modal>
+</clr-modal> -->

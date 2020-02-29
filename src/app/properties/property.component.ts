@@ -1,13 +1,10 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'property-container',
-    templateUrl: './property.component.html',
-    styleUrls: ['./property.component.scss']
+  selector: 'property-container',
+  templateUrl: './property.component.html',
+  styleUrls: ['./property.component.scss']
 })
-
 export class PropertyComponent {
-
-    constructor() { }
-
+  constructor() {}
 }
