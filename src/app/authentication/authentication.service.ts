@@ -3,38 +3,47 @@ import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { environment } from '../../environments/environment';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { LoginCredentials } from './login-credentials.interface';
 
-@Injectable()
+interface Token {
+  access: string;
+  refresh: string;
+}
+
+@Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-  private _authUrl: string = environment.baseUrl + '/auth';
+  private baseUrl: string = environment.baseUrl + '/auth';
   private jwtHelper: JwtHelperService = new JwtHelperService();
-  private user;
+  private _token: BehaviorSubject<Token> = new BehaviorSubject(null);
+  private get token(): Token {
+    return this._token.getValue();
+  }
+  token$ = this._token.asObservable();
 
   constructor(private http: HttpClient) {}
 
-  getTokenFromServer(creds) {
-    const url = this._authUrl + '/get_token/';
-    return this.http.post<any>(url, creds).pipe(
-      tap(res => {
-        this.saveTokenLocally(res.token);
-        this.user = this.decodeToken();
+  getTokenFromServer(creds: LoginCredentials): Observable<Token> {
+    return this.http.post<Token>(`${this.baseUrl}/get_token/`, creds).pipe(
+      tap((token) => {
+        this.saveTokenToLocalStorage(token);
       })
     );
   }
 
-  getUser() {
-    return this.user;
+  saveTokenToLocalStorage(token: Token) {
+    localStorage.setItem('token', JSON.stringify(token));
   }
 
-  saveTokenLocally(token) {
-    localStorage.setItem('token', token);
+  isAccessTokenExpired() {
+    return this.token && this.jwtHelper.isTokenExpired(this.token.access);
   }
 
-  getTokenLocally() {
-    return localStorage.getItem('token');
+  isRefreshTokenExpired() {
+    return this.token && this.jwtHelper.isTokenExpired(this.token.refresh);
   }
 
   decodeToken() {
-    return this.jwtHelper.decodeToken(this.getTokenLocally());
+    return this.token && this.jwtHelper.decodeToken(this.token.access);
   }
 }

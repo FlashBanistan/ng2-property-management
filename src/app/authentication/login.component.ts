@@ -1,27 +1,24 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Login } from './login';
 import { AuthenticationService } from './authentication.service';
+import { LoginCredentials } from './login-credentials.interface';
 
 @Component({
-  selector: 'login-container',
+  selector: 'app-login-container',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  public loginModel: Login = new Login();
+  public loginCredentials: LoginCredentials = { email: '', password: '' };
 
   constructor(private authService: AuthenticationService, private router: Router) {}
 
   onSubmit() {
-    this.authService.getTokenFromServer(this.loginModel).subscribe(
-      res => {
-        // console.log('Response: ', res);
+    this.authService.getTokenFromServer(this.loginCredentials).subscribe(
+      (res) => {
         this.router.navigate(['/connect']);
       },
-      err => {
-        // console.log('Error: ', err);
-      }
+      (err) => {}
     );
   }
 }
