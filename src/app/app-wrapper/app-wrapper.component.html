@@ -1,37 +1,34 @@
-<!-- <clr-main-container>
-    <clr-header class="header-6">
-        <div class="branding">
-            <a routerLink="/connect/home" class="nav-link">
-                <span class="title">Property Management</span>
-            </a>
-        </div>
-        <div class="header-actions">
-            <clr-dropdown>
-                <button class="nav-icon" clrDropdownTrigger>
-                    <clr-icon shape="user"></clr-icon>
-                    <clr-icon shape="caret down"></clr-icon>
-                </button>
-                <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-                    <a href="..." clrDropdownItem>About</a>
-                    <a href="..." clrDropdownItem>Preferences</a>
-                    <a href="..." clrDropdownItem>Log out</a>
-                </clr-dropdown-menu>
-            </clr-dropdown>
-        </div>
-    </clr-header>
-    <div class="content-container">
-        <main class="content-area">
-            <router-outlet></router-outlet>
-        </main>
-        <clr-vertical-nav [clr-nav-level]="1" [clrVerticalNavCollapsible]="collapsible" [(clrVerticalNavCollapsed)]="collapsed">
-            <a clrVerticalNavLink routerLink="/connect/home" routerLinkActive="active"><clr-icon clrVerticalNavIcon shape="home"></clr-icon> Home</a>
-            <a clrVerticalNavLink routerLink="/connect/payments" routerLinkActive="active"><clr-icon clrVerticalNavIcon shape="wallet"></clr-icon> Payments</a>
-            <a clrVerticalNavLink routerLink="/connect/maintenance" routerLinkActive="active"><clr-icon clrVerticalNavIcon shape="wrench"></clr-icon> Maintenance</a>
-            <a clrVerticalNavLink routerLink="/connect/documents" routerLinkActive="active"><clr-icon clrVerticalNavIcon shape="file"></clr-icon> Documents</a>
-            <a clrVerticalNavLink routerLink="/connect/property" routerLinkActive="active"><clr-icon clrVerticalNavIcon shape="info-standard"></clr-icon> Property</a>
-            <a clrVerticalNavLink routerLink="/connect/account" routerLinkActive="active"><clr-icon clrVerticalNavIcon shape="user"></clr-icon> Account</a>
-            <a clrVerticalNavLink routerLink="/connect/help" routerLinkActive="active"><clr-icon clrVerticalNavIcon shape="help"></clr-icon> Help</a>
-        </clr-vertical-nav>
+<mat-toolbar class="header" color="primary">
+  <span> </span>
+  <span class="spacer"></span>
+  <button mat-icon-button aria-label="user">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="main menu" [matMenuTriggerFor]="mainMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #mainMenu="matMenu">
+    <button mat-menu-item>About</button>
+    <button mat-menu-item>Preferences</button>
+    <button mat-menu-item>Log out</button>
+  </mat-menu>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav class="sidenav" mode="side" [opened]="opened">
+    <div>
+      <a mat-button routerLink="/connect/home">
+        <img width="100%" src="../../assets/images/logo_transparent.png" alt="logo" />
+      </a>
     </div>
-</clr-main-container> -->
-<router-outlet></router-outlet>
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let link of navLinks" [routerLink]="link.url">
+        <mat-icon matListIcon>{{ link.icon }}</mat-icon> {{ link.title }}
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

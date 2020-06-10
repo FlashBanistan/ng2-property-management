@@ -17,7 +17,7 @@
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
-            "assets": ["src/assets", "src/favicon.ico"],
+            "assets": ["src/assets", "src/favicon.png"],
             "styles": ["src/assets/css/styles.scss"],
             "scripts": ["node_modules/@webcomponents/custom-elements/custom-elements.min.js"]
           },
@@ -73,7 +73,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": ["node_modules/@webcomponents/custom-elements/custom-elements.min.js"],
             "styles": ["src/assets/css/styles.scss"],
-            "assets": ["src/assets", "src/favicon.ico"]
+            "assets": ["src/assets", "src/favicon.png"]
           }
         },
         "lint": {
