@@ -5,6 +5,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { environment } from '../../environments/environment';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { LoginCredentials } from './login-credentials.interface';
+import { Router } from '@angular/router';
 
 interface Token {
   access: string;
@@ -21,29 +22,44 @@ export class AuthenticationService {
   }
   token$ = this._token.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   getTokenFromServer(creds: LoginCredentials): Observable<Token> {
     return this.http.post<Token>(`${this.baseUrl}/get_token/`, creds).pipe(
       tap((token) => {
-        this.saveTokenToLocalStorage(token);
+        this.setAuthToken(token);
       })
     );
+  }
+
+  setAuthToken(token: Token) {
+    this.saveTokenToLocalStorage(token);
+    this._token.next(token);
   }
 
   saveTokenToLocalStorage(token: Token) {
     localStorage.setItem('token', JSON.stringify(token));
   }
 
-  isAccessTokenExpired() {
-    return this.token && this.jwtHelper.isTokenExpired(this.token.access);
+  getTokenFromLocalStorage(): Token {
+    return JSON.parse(localStorage.getItem('token'));
   }
 
-  isRefreshTokenExpired() {
-    return this.token && this.jwtHelper.isTokenExpired(this.token.refresh);
+  removeTokenFromLocalStorage() {
+    localStorage.removeItem('token');
+  }
+
+  isTokenExpired(tokenString: string) {
+    return this.jwtHelper.isTokenExpired(tokenString);
   }
 
   decodeToken() {
     return this.token && this.jwtHelper.decodeToken(this.token.access);
+  }
+
+  logout() {
+    this.removeTokenFromLocalStorage();
+    this._token.next(null);
+    this.router.navigate(['/login']).then(() => location.reload());
   }
 }

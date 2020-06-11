@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from 'app/authentication/authentication.service';
 
 @Component({
   selector: 'app-wrapper',
@@ -18,5 +19,9 @@ export class AppWrapperComponent {
     { title: 'Help', url: '/connect/help', icon: 'help_center' },
   ];
 
-  constructor() {}
+  constructor(private authService: AuthenticationService) {}
+
+  logout() {
+    this.authService.logout();
+  }
 }

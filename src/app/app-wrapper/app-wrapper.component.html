@@ -10,7 +10,7 @@
   <mat-menu #mainMenu="matMenu">
     <button mat-menu-item>About</button>
     <button mat-menu-item>Preferences</button>
-    <button mat-menu-item>Log out</button>
+    <button mat-menu-item (click)="logout()">Log out</button>
   </mat-menu>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
