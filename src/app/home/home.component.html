@@ -1,128 +1,88 @@
-<!-- <h2>Home Component!</h2> -->
-<div class="row">
-  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 d-flex">
-    <div class="card">
-      <div class="card-header">Address</div>
-      <div class="card-block">
-        <div class="card-description">
-          10464 S. Jordan Gateway #235 <br />
-          South Jordan, Utah 84095
-        </div>
-      </div>
-    </div>
+<div class="cards">
+  <div class="card">
+    <mat-card>
+      <mat-card-title>Address</mat-card-title>
+      <mat-card-content>
+        <address>
+          <span>10464 S Jordan Gateway #235</span><br />
+          <span>South Jordan, Utah</span><br />
+          <span>84095</span>
+        </address>
+      </mat-card-content>
+    </mat-card>
   </div>
-  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 d-flex">
-    <div class="card">
-      <div class="card-header">Maintenance</div>
-      <div class="card-block">
-        <div class="card-description">
-          No open requests.
-        </div>
-      </div>
-      <div class="card-footer">
-        <div class="btn-secondary">
-          <button class="btn btn-sm btn-link" routerLink="/connect/maintenance/create">Create</button>
-          <button class="btn btn-sm btn-link" routerLink="/connect/maintenance/list">View</button>
-        </div>
-      </div>
-    </div>
+  <div class="card">
+    <mat-card>
+      <mat-card-title>Maintenance</mat-card-title>
+      <mat-card-content>
+        <span>No open requests</span>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="primary">Create</button>
+        <button mat-stroked-button color="accent">View</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
-  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 d-flex">
-    <div class="card">
-      <div class="card-header">Lease</div>
-      <div class="card-block">
-        <div class="card-description">
-          View Lease
-        </div>
-      </div>
-      <div class="card-footer">
-        <div class="btn-secondary">
-          <button class="btn btn-sm btn-link">Online</button>
-          <button class="btn btn-sm btn-link">Pdf</button>
-        </div>
-      </div>
-    </div>
+  <div class="card">
+    <mat-card>
+      <mat-card-title>Lease</mat-card-title>
+      <mat-card-content>
+        <span>View Lease</span>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="primary">Online</button>
+        <button mat-stroked-button color="accent">Pdf</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
-  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 flex-sm-down-first">
-    <div class="card">
-      <div class="card-block">
-        <div class="card-title d-flex justify-content-even">
-          <span>Your current balance: <span style="color: #60b515">$0.00</span></span>
-          <!-- <a href="javascript:;" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md tooltip-top-left">
-            <clr-icon shape="info-circle" size="24"></clr-icon>
-            <span class="tooltip-content">Your balance reflects current and overdue charges, late fees, and any other charges as outlined in your rental agreement.</span>
-          </a> -->
-        </div>
-        <table class="table table-noborder">
-          <caption>
-            October (next month)
-          </caption>
-          <thead>
-            <tr>
-              <th class="text-left">Description</th>
-              <th class="text-right">Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="text-left">Rent</td>
-              <td class="text-right">$980.00</td>
-            </tr>
-            <tr>
-              <td class="text-left">Media Package</td>
-              <td class="text-right">$100.00</td>
-            </tr>
-            <tr>
-              <td class="text-left">Water/Sewer</td>
-              <td class="text-right">$60.00</td>
-            </tr>
-            <tr>
-              <td class="text-left">Trash</td>
-              <td class="text-right">$30.00</td>
-            </tr>
-            <tr>
-              <td class="text-left">Pet Rent</td>
-              <td class="text-right">$35.00</td>
-            </tr>
-            <tr>
-              <td class="text-left">Tenant Liability Insurance</td>
-              <td class="text-right">$9.50</td>
-            </tr>
-            <tr>
-              <td class="text-left">Credits & Payments</td>
-              <td class="text-right">$1214.50</td>
-            </tr>
-          </tbody>
+  <div class="card">
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title style="display: flex; justify-content: space-between; align-items: center;"
+          ><span>Your current balance: <span style="color: #60b515;">$0.00</span></span>
+          <mat-icon
+            matTooltip="Your balance reflects current and overdue charges, late fees, and any other charges as outlined in your rental agreement"
+            >info</mat-icon
+          ></mat-card-title
+        >
+        <div class="card-title d-flex justify-content-even"></div>
+
+        <table style="width: 100%;" mat-table [dataSource]="tableData">
+          <ng-container matColumnDef="Description">
+            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <td mat-cell *matCellDef="let element">{{ element.item }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Amount">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element">{{ element.amount }}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
         </table>
-      </div>
-      <div class="card-footer">
-        <button class="btn btn-sm btn-primary">
-          Pay Now
-        </button>
-        <button class="btn btn-sm btn-secondary">
-          Setup Autopay
-        </button>
-      </div>
-    </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="primary">Pay Now</button>
+        <button mat-stroked-button color="accent">Setup Autopay</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
-  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-    <div class="card">
-      <!-- <div class="card-img">
-        <img src="...">
-      </div> -->
-      <div class="card-block">
-        <h4 class="card-title">Announcements</h4>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item" *ngFor="let announcement of announcements">
-          <span class="font-weight-bold">{{ announcement.title }}</span> <br />
-          <small class="font-italic">{{ announcement.created_on | date }}</small> <br />
-          <small class="pointer" (click)="toggleAnnouncement(announcement)">
-            Read...
-          </small>
-        </li>
-      </ul>
-    </div>
+  <div class="card">
+    <mat-card>
+      <mat-card-title>Announcements</mat-card-title>
+      <mat-card-content>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let announcement of []">
+            <span class="font-weight-bold">{{ announcement.title }}</span> <br />
+            <small class="font-italic">{{ announcement.created_on | date }}</small> <br />
+            <small class="pointer" (click)="toggleAnnouncement(announcement)">
+              Read...
+            </small>
+          </li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
 

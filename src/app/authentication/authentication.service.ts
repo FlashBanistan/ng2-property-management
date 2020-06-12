@@ -18,7 +18,7 @@ export class AuthenticationService {
   private baseUrl: string = environment.baseUrl + '/auth';
   private jwtHelper: JwtHelperService = new JwtHelperService();
   private _token: BehaviorSubject<Token> = new BehaviorSubject(null);
-  private get token(): Token {
+  get token(): Token {
     return this._token.getValue();
   }
   token$ = this._token.asObservable();
