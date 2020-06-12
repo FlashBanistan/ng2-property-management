@@ -6,8 +6,9 @@ import { environment } from '../../environments/environment';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { LoginCredentials } from './login-credentials.interface';
 import { Router } from '@angular/router';
+import { AppUrl } from 'app/shared/enums/app-url.enum';
 
-interface Token {
+export interface Token {
   access: string;
   refresh: string;
 }
@@ -30,6 +31,16 @@ export class AuthenticationService {
         this.setAuthToken(token);
       })
     );
+  }
+
+  refreshTokenFromServer(tokenString: string) {
+    return this.http
+      .post<Token>(`${this.baseUrl}/refresh_token/`, { token: tokenString })
+      .pipe(
+        tap((token) => {
+          this.setAuthToken(token);
+        })
+      );
   }
 
   setAuthToken(token: Token) {
@@ -60,6 +71,6 @@ export class AuthenticationService {
   logout() {
     this.removeTokenFromLocalStorage();
     this._token.next(null);
-    this.router.navigate(['/login']).then(() => location.reload());
+    this.router.navigate([AppUrl.LOGIN]).then(() => location.reload());
   }
 }

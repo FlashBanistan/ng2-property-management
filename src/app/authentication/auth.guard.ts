@@ -6,18 +6,19 @@ import {
   Router,
   CanLoad,
   CanActivateChild,
+  Route,
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { Route } from '@angular/compiler/src/core';
-import { AuthenticationService } from './authentication.service';
 import { switchMap } from 'rxjs/operators';
+import { AuthenticationService } from './authentication.service';
+import { Token } from './authentication.service';
+import { AppUrl } from 'app/shared/enums/app-url.enum';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   constructor(private router: Router, private authService: AuthenticationService) {}
 
   canActivate(): Observable<boolean> {
-    // TODO: Implement refresh token.
     return this.authService.token$.pipe(
       switchMap((token) => {
         if (token && !this.authService.isTokenExpired(token.access)) {
@@ -30,7 +31,16 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
           return of(true);
         }
 
-        this.router.navigate(['/login']);
+        if (localStorageToken && !this.authService.isTokenExpired(localStorageToken.refresh)) {
+          return this.authService.refreshTokenFromServer(localStorageToken.refresh).pipe(
+            switchMap((res: Token) => {
+              this.authService.setAuthToken(res);
+              return of(!!this.authService.token$);
+            })
+          );
+        }
+
+        this.router.navigate([AppUrl.LOGIN]);
         return of(false);
       })
     );
