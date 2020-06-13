@@ -1,32 +1,21 @@
-<button class="btn btn-primary" routerLink="/connect/maintenance/create">Request</button>
-<table class="table">
-  <thead>
-    <tr>
-      <th class="left">Date</th>
-      <th class="left">Description</th>
-      <th class="right">Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="left">10/23/2017</td>
-      <td class="left">Door handle completely fell off.</td>
-      <td class="right">Pending</td>
-    </tr>
-    <tr>
-      <td class="left">10/14/2017</td>
-      <td class="left">Bathroom faucet is leaking even when closed all the way.</td>
-      <td class="right">Complete</td>
-    </tr>
-    <tr>
-      <td class="left">10/01/2017</td>
-      <td class="left">Kitchen cabinet hinge has become detached.</td>
-      <td class="right">Complete</td>
-    </tr>
-    <tr>
-      <td class="left">09/18/2017</td>
-      <td class="left">Dishwasher is making a whirring sound then shuts down.</td>
-      <td class="right">Complete</td>
-    </tr>
-  </tbody>
+<button mat-flat-button color="primary" routerLink="/connect/maintenance/create">Request</button>
+
+<table style="width: 100%;" mat-table [dataSource]="tableData">
+  <ng-container matColumnDef="Date">
+    <th mat-header-cell *matHeaderCellDef>Date</th>
+    <td mat-cell *matCellDef="let element">{{ element.dateCreated }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Description">
+    <th mat-header-cell *matHeaderCellDef>Description</th>
+    <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Status">
+    <th mat-header-cell *matHeaderCellDef>Status</th>
+    <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
