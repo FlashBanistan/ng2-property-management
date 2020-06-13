@@ -35,7 +35,7 @@ export class AuthenticationService {
 
   refreshTokenFromServer(tokenString: string) {
     return this.http
-      .post<Token>(`${this.baseUrl}/refresh_token/`, { token: tokenString })
+      .post<Token>(`${this.baseUrl}/refresh_token/`, { refresh: tokenString })
       .pipe(
         tap((token) => {
           this.setAuthToken(token);
