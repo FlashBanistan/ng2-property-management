@@ -1,4 +1,4 @@
-import { Announcement } from '../announcement.interface';
+import { Announcement } from '../announcement-detail/announcement.interface';
 
 export interface AnnouncementList {
   count: number;

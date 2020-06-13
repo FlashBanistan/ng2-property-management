@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environments/environment';
 import { AnnouncementList } from './announcement-list/announcement-list.interface';
-import { Announcement } from './announcement.interface';
+import { Announcement } from './announcement-detail/announcement.interface';
 
 @Injectable({ providedIn: 'root' })
 export class AnnouncementService {
