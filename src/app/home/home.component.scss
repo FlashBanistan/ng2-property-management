@@ -1,9 +1,10 @@
-.card {
-}
-
 .cards {
   display: grid;
   grid-gap: 10px;
+}
+
+.card {
+  // height: 500px;
 }
 
 @media (min-width: 600px) {

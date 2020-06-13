@@ -1,0 +1,13 @@
+.mat-card {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.mat-card-header {
+  flex-shrink: 0 !important;
+}
+
+.mat-card-content {
+  flex-grow: 1 !important;
+  overflow: auto !important;
+}

@@ -1,4 +1,3 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -19,7 +18,11 @@ $property-management-accent: mat-palette($mat-pink, A200, A100, A400);
 $property-management-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$property-management-theme: mat-light-theme($property-management-primary, $property-management-accent, $property-management-warn);
+$property-management-theme: mat-light-theme(
+  $property-management-primary,
+  $property-management-accent,
+  $property-management-warn
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -29,6 +32,7 @@ $property-management-theme: mat-light-theme($property-management-primary, $prope
 @import url('./_flex.scss');
 @import url('./_utility.scss');
 @import url('./_text.scss');
+// @import url('./material-overrides/material-overrides.scss');
 
 $red: #f52f22;
 $pink: #f1428a;
@@ -65,5 +69,11 @@ $cool-grey: #61717d;
   cursor: pointer;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

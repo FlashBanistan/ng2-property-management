@@ -1,7 +1,7 @@
 <div class="cards">
   <!-- CURRENT BALANCE -->
-  <div class="card" style="height: 500px;">
-    <mat-card style="height: 100%;">
+  <div class="card">
+    <mat-card>
       <mat-card-content>
         <mat-card-title style="display: flex; justify-content: space-between; align-items: center;"
           ><span>Your current balance: <span style="color: #60b515;">$0.00</span></span>
@@ -34,7 +34,7 @@
     </mat-card>
   </div>
   <!-- ANNOUNCEMENTS -->
-  <div class="card" style="height: 500px;">
+  <div class="card">
     <app-announcement-list></app-announcement-list>
   </div>
   <!-- ADDRESS / MAINTENANCE / LEASE -->
@@ -50,7 +50,10 @@
         </address>
       </mat-card-content>
     </mat-card>
-    <!-- MAINTENANCE -->
+  </div>
+
+  <!-- MAINTENANCE -->
+  <div class="card">
     <mat-card>
       <mat-card-title>Maintenance</mat-card-title>
       <mat-card-content>
@@ -61,7 +64,10 @@
         <button mat-stroked-button color="accent">View</button>
       </mat-card-actions>
     </mat-card>
-    <!-- LEASE -->
+  </div>
+
+  <!-- LEASE -->
+  <div class="card">
     <mat-card>
       <mat-card-title>Lease</mat-card-title>
       <mat-card-content>
