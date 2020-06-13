@@ -4,9 +4,9 @@ import { Maintenance } from '../../maintenance/maintenance';
 import { MaintenanceService } from '../../maintenance/maintenance.service';
 
 @Component({
-  selector: 'maintenance-create',
+  selector: 'app-maintenance-create',
   templateUrl: './maintenance-create.component.html',
-  styles: ['./maintenance-create.component.scss']
+  styleUrls: ['./maintenance-create.component.scss'],
 })
 export class MaintenanceCreateComponent {
   model = new Maintenance();
@@ -15,10 +15,10 @@ export class MaintenanceCreateComponent {
 
   onSubmit(): void {
     this._maintenanceService.createMaintenanceItem(this.model).subscribe(
-      res => {
+      (res) => {
         this.model = new Maintenance();
       },
-      err => {
+      (err) => {
         console.log('Failure: ', err);
       }
     );

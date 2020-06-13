@@ -1,64 +1,27 @@
-<div class="row">
-  <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-    <form class="card" #maintenanceForm="ngForm" (ngSubmit)="onSubmit()">
-      <div class="card-header">
-        Request Maintenance
-      </div>
-      <div class="card-block">
-        <div class="card-text">
-          <form #maintenanceForm="ngForm" (ngSubmit)="onSubmit()">
-            <section class="form-block">
-              <!-- <div class="form-group">
-                <label class="font-weight-bold required" for="created_by">Created By</label>
-                <input #created_by="ngModel" id="created_by" name="created_by" [(ngModel)]="model.created_by" disabled required>
-              </div> -->
-              <div class="form-group">
-                <label class="font-weight-bold required" for="description">Description</label>
-                <textarea
-                  #description="ngModel"
-                  id="description"
-                  name="description"
-                  rows="5"
-                  #description="ngModel"
-                  [(ngModel)]="model.description"
-                  required
-                ></textarea>
-              </div>
-              <div class="form-group">
-                <label class="font-weight-bold required">Permission to enter: </label>
-                <div class="radio-inline">
-                  <input
-                    type="radio"
-                    ng-control="permission_to_enter"
-                    [(ngModel)]="model.permission_to_enter"
-                    [value]="true"
-                    name="permission_yes"
-                    id="permission_yes"
-                    required
-                  />
-                  <label for="permission_yes">Yes</label>
-                </div>
-                <div class="radio-inline">
-                  <input
-                    type="radio"
-                    ng-control="permission_to_enter"
-                    [(ngModel)]="model.permission_to_enter"
-                    [value]="false"
-                    name="permission_no"
-                    id="permission_no"
-                    required
-                  />
-                  <label for="permission_no">No</label>
-                </div>
-              </div>
-            </section>
-          </form>
-        </div>
-      </div>
-      <div class="card-footer">
-        <button class="btn btn-sm btn-primary" type="submit" [disabled]="maintenanceForm.form.invalid">Create</button>
-        <button class="btn btn-sm btn-link" (click)="goBack()">Go Back</button>
-      </div>
-    </form>
-  </div>
-</div>
+<mat-card>
+  <mat-card-title>Request Maintenance</mat-card-title>
+  <mat-card-content>
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="5"
+        cdkAutosizeMaxRows="8"
+      ></textarea>
+    </mat-form-field>
+
+    <div>
+      <mat-label>Permission to enter: </mat-label>
+      <mat-radio-group>
+        <mat-radio-button value="auto">Yes</mat-radio-button>
+        <mat-radio-button value="always">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-flat-button type="submit" color="primary">Create</button>
+    <button mat-stroked-button type="button" color="accent" (click)="goBack()">Go Back</button>
+  </mat-card-actions>
+</mat-card>
