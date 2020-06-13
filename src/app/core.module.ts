@@ -11,6 +11,8 @@ import { LeaseService } from './leases/lease.service';
 import { HeadersInterceptor } from './shared/interceptors/headers.interceptor';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { matFormFieldDefaultOptions } from './shared/material-defaults/mat-form-field-default-options';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { matDialogDefaultOptions } from './shared/material-defaults/mat-dialog-default-options';
 
 @NgModule({
   declarations: [],
@@ -27,6 +29,10 @@ import { matFormFieldDefaultOptions } from './shared/material-defaults/mat-form-
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: matFormFieldDefaultOptions,
+    },
+    {
+      provide: MAT_DIALOG_DEFAULT_OPTIONS,
+      useValue: matDialogDefaultOptions,
     },
   ],
 })
