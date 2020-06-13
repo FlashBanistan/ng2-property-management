@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-title>Announcements</mat-card-title>
+  <mat-card-content>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let announcement of []">
+        <span class="font-weight-bold">{{ announcement.title }}</span> <br />
+        <small class="font-italic">{{ announcement.created_on | date }}</small> <br />
+        <small class="pointer" (click)="toggleAnnouncement(announcement)">
+          Read...
+        </small>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>

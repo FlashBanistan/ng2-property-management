@@ -55,8 +55,8 @@
 
           <ng-container matColumnDef="Amount">
             <th mat-header-cell *matHeaderCellDef>Name</th>
-            <td mat-cell *matCellDef="let element">{{ element.amount }}</td>
-          </ng-container>
+            <td mat-cell *matCellDef="let element">{{ element.amount }}</td> </ng-container
+          >app-announcement-list
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
@@ -69,20 +69,7 @@
     </mat-card>
   </div>
   <div class="card">
-    <mat-card>
-      <mat-card-title>Announcements</mat-card-title>
-      <mat-card-content>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item" *ngFor="let announcement of []">
-            <span class="font-weight-bold">{{ announcement.title }}</span> <br />
-            <small class="font-italic">{{ announcement.created_on | date }}</small> <br />
-            <small class="pointer" (click)="toggleAnnouncement(announcement)">
-              Read...
-            </small>
-          </li>
-        </ul>
-      </mat-card-content>
-    </mat-card>
+    <app-announcement-list></app-announcement-list>
   </div>
 </div>
 
