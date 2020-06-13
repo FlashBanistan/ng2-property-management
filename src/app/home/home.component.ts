@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { AnnouncementService } from '../announcements/announcement.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home-container',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   announcements: any;
   announcementOpened = false;
   selectedAnnouncement: any;
@@ -43,18 +42,5 @@ export class HomeComponent implements OnInit {
     },
   ];
 
-  constructor(private announcementService: AnnouncementService) {}
-
-  ngOnInit() {
-    this.getAnnouncements();
-  }
-
-  getAnnouncements() {
-    this.announcementService.getAnnouncements().subscribe((res) => (this.announcements = res));
-  }
-
-  toggleAnnouncement(announcement) {
-    this.selectedAnnouncement = announcement;
-    this.announcementOpened = !this.announcementOpened;
-  }
+  constructor() {}
 }

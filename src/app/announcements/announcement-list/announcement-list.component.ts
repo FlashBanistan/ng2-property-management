@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnnouncementService } from '../announcement.service';
+import { Observable } from 'rxjs';
+import { AnnouncementList } from './announcement-list.interface';
 
 @Component({
   selector: 'app-announcement-list',
@@ -7,10 +9,11 @@ import { AnnouncementService } from '../announcement.service';
   styleUrls: ['./announcement-list.component.scss'],
 })
 export class AnnouncementListComponent implements OnInit {
+  announcements$: Observable<AnnouncementList>;
   constructor(private announcementService: AnnouncementService) {}
 
   ngOnInit() {
-    // this.getAnnouncements();
+    this.announcements$ = this.announcementService.fetchAnnouncements();
   }
 
   toggleAnnouncement() {}

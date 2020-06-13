@@ -1,28 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/publishReplay';
 import { environment } from '../../environments/environment';
+import { AnnouncementList } from './announcement-list/announcement-list.interface';
+import { Announcement } from './announcement.interface';
 
 @Injectable({ providedIn: 'root' })
 export class AnnouncementService {
-  private _announcementUrl: string = environment.baseUrl + '/announcements';
-  private _announcements: Observable<any> = null;
+  private announcementUrl: string = environment.baseUrl + '/announcements/';
+  private announcements$: Observable<AnnouncementList> = null;
 
   constructor(private http: HttpClient) {}
 
-  getAnnouncements() {
-    if (!this._announcements) {
-      this._announcements = this.http.get(this._announcementUrl).publishReplay(1).refCount();
+  fetchAnnouncements(): Observable<AnnouncementList> {
+    if (!this.announcements$) {
+      this.announcements$ = this.http.get<AnnouncementList>(this.announcementUrl);
     }
-    return this._announcements;
+    return this.announcements$;
   }
 
-  getAnnouncement(id) {
-    return this.http.get(this._announcementUrl);
+  fetchAnnouncement(url: string): Observable<Announcement> {
+    return this.http.get<Announcement>(url);
   }
 
   clearCache() {
-    this._announcements = null;
+    this.announcements$ = null;
   }
 }
