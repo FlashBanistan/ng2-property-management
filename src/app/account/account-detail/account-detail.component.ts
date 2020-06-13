@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'account-detail',
+  selector: 'app-account-detail',
   templateUrl: './account-detail.component.html',
-  styles: ['./account-detail.component.scss']
+  styleUrls: ['./account-detail.component.scss'],
 })
 export class AccountDetailComponent {
   constructor() {}

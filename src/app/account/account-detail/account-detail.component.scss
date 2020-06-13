@@ -1,0 +1,15 @@
+mat-card {
+  max-width: 500px;
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+mat-label {
+  font-weight: bold;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
