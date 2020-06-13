@@ -1,42 +1,30 @@
-<ul id="demoTabs" class="nav" role="tablist">
-  <li role="presentation" class="nav-item">
-    <button
-      id="tab1"
-      class="btn btn-link nav-link"
-      aria-controls="panel1"
-      aria-selected="false"
-      type="button"
-      routerLink="/connect/account/details"
-      routerLinkActive="active"
-    >
-      Profile
-    </button>
-  </li>
-  <li role="presentation" class="nav-item">
-    <button
-      id="tab2"
-      class="btn btn-link nav-link"
-      aria-controls="panel2"
-      aria-selected="false"
-      type="button"
-      routerLink="/connect/account/signature"
-      routerLinkActive="active"
-    >
-      Signature
-    </button>
-  </li>
-  <li role="presentation" class="nav-item">
-    <button
-      id="tab3"
-      class="btn btn-link nav-link"
-      aria-controls="panel3"
-      aria-selected="false"
-      type="button"
-      routerLink="/connect/account/payment_methods"
-      routerLinkActive="active"
-    >
-      Payment Methods
-    </button>
-  </li>
-</ul>
+<nav mat-tab-nav-bar>
+  <a
+    mat-tab-link
+    routerLink="/connect/account/details"
+    routerLinkActive
+    #profile="routerLinkActive"
+    [active]="profile.isActive"
+  >
+    Profile
+  </a>
+  <a
+    mat-tab-link
+    routerLink="/connect/account/signature"
+    routerLinkActive
+    #signature="routerLinkActive"
+    [active]="signature.isActive"
+  >
+    Signature
+  </a>
+  <a
+    mat-tab-link
+    routerLink="/connect/account/payment_methods"
+    routerLinkActive
+    #paymentMethod="routerLinkActive"
+    [active]="paymentMethod.isActive"
+  >
+    Payment Methods
+  </a>
+</nav>
 <router-outlet></router-outlet>
