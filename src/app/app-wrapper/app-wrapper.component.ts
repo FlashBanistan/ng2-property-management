@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthenticationService } from 'app/authentication/authentication.service';
+import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-wrapper',
   templateUrl: './app-wrapper.component.html',
   styleUrls: ['./app-wrapper.component.scss'],
 })
-export class AppWrapperComponent {
-  collapsible = true;
-  opened = true;
+export class AppWrapperComponent implements OnInit, OnDestroy {
+  isMobile: boolean;
+  drawerMode: string;
   navLinks = [
     { title: 'Home', url: '/connect/home', icon: 'home' },
     { title: 'Payments', url: '/connect/payments', icon: 'payment' },
@@ -18,10 +21,36 @@ export class AppWrapperComponent {
     { title: 'Account', url: '/connect/account', icon: 'account_box' },
     { title: 'Help', url: '/connect/help', icon: 'help_center' },
   ];
+  ngUnsubscribe$: Subject<void> = new Subject<void>();
 
-  constructor(private authService: AuthenticationService) {}
+  constructor(private authService: AuthenticationService, private breakpointObserver: BreakpointObserver) {}
+
+  ngOnInit() {
+    this.manageScreenSize();
+  }
+
+  ngOnDestroy() {
+    this.ngUnsubscribe$.next();
+    this.ngUnsubscribe$.complete();
+  }
 
   logout() {
     this.authService.logout();
+  }
+
+  private manageScreenSize() {
+    /* Subscribe to screen size. */
+    this.breakpointObserver
+      .observe([Breakpoints.Handset, Breakpoints.TabletPortrait])
+      .pipe(takeUntil(this.ngUnsubscribe$))
+      .subscribe((result) => {
+        if (result.matches) {
+          this.isMobile = true;
+          this.drawerMode = 'over';
+        } else {
+          this.isMobile = false;
+          this.drawerMode = 'side';
+        }
+      });
   }
 }

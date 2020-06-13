@@ -1,4 +1,7 @@
 <mat-toolbar class="header" color="primary">
+  <button *ngIf="isMobile" mat-icon-button (click)="drawer.toggle()">
+    <mat-icon aria-label="Toggle sidenav">menu</mat-icon>
+  </button>
   <span> </span>
   <span class="spacer"></span>
   <button mat-icon-button aria-label="user">
@@ -14,14 +17,19 @@
   </mat-menu>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav class="sidenav" mode="side" [opened]="opened">
+  <mat-sidenav class="sidenav" #drawer [mode]="drawerMode" [opened]="!isMobile">
     <div>
       <a mat-button routerLink="/connect/home">
         <img width="100%" src="../../assets/images/logo_transparent.png" alt="logo" />
       </a>
     </div>
     <mat-nav-list>
-      <a mat-list-item *ngFor="let link of navLinks" [routerLink]="link.url">
+      <a
+        mat-list-item
+        *ngFor="let link of navLinks"
+        [routerLink]="link.url"
+        (click)="isMobile ? drawer.toggle() : null"
+      >
         <mat-icon matListIcon>{{ link.icon }}</mat-icon> {{ link.title }}
       </a>
     </mat-nav-list>
