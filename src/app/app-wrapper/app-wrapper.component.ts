@@ -13,7 +13,7 @@ export class AppWrapperComponent implements OnInit, OnDestroy {
   isMobile: boolean;
   drawerMode: string;
   navLinks = [
-    { title: 'Home', url: '/connect/home', icon: 'home' },
+    { title: 'Dashboard', url: '/connect/home', icon: 'dashboard' },
     { title: 'Payments', url: '/connect/payments', icon: 'payment' },
     { title: 'Maintenance', url: '/connect/maintenance', icon: 'engineering' },
     { title: 'Documents', url: '/connect/documents', icon: 'snippet_folder' },
