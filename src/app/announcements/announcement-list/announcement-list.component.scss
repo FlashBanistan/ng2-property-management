@@ -1,14 +1,17 @@
-mat-list {
-  mat-list-item {
-    h3 {
-      font-weight: bold;
-    }
-    p {
-      font-style: italic;
-    }
-    small {
-      font-size: 0.8rem !important;
-      cursor: pointer;
+mat-card {
+  height: 100%;
+  mat-list {
+    mat-list-item {
+      h3 {
+        font-weight: bold;
+      }
+      p {
+        font-style: italic;
+      }
+      small {
+        font-size: 0.8rem !important;
+        cursor: pointer;
+      }
     }
   }
 }

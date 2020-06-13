@@ -1,42 +1,7 @@
 <div class="cards">
-  <div class="card">
-    <mat-card>
-      <mat-card-title>Address</mat-card-title>
-      <mat-card-content>
-        <address>
-          <span>10464 S Jordan Gateway #235</span><br />
-          <span>South Jordan, Utah</span><br />
-          <span>84095</span>
-        </address>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="card">
-    <mat-card>
-      <mat-card-title>Maintenance</mat-card-title>
-      <mat-card-content>
-        <span>No open requests</span>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-flat-button color="primary">Create</button>
-        <button mat-stroked-button color="accent">View</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-  <div class="card">
-    <mat-card>
-      <mat-card-title>Lease</mat-card-title>
-      <mat-card-content>
-        <span>View Lease</span>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-flat-button color="primary">Online</button>
-        <button mat-stroked-button color="accent">Pdf</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-  <div class="card">
-    <mat-card>
+  <!-- CURRENT BALANCE -->
+  <div class="card" style="height: 500px;">
+    <mat-card style="height: 100%;">
       <mat-card-content>
         <mat-card-title style="display: flex; justify-content: space-between; align-items: center;"
           ><span>Your current balance: <span style="color: #60b515;">$0.00</span></span>
@@ -68,8 +33,45 @@
       </mat-card-actions>
     </mat-card>
   </div>
-  <div class="card">
+  <!-- ANNOUNCEMENTS -->
+  <div class="card" style="height: 500px;">
     <app-announcement-list></app-announcement-list>
+  </div>
+  <!-- ADDRESS / MAINTENANCE / LEASE -->
+  <div class="card">
+    <!-- ADDRESS-->
+    <mat-card>
+      <mat-card-title>Address</mat-card-title>
+      <mat-card-content>
+        <address>
+          <span>10464 S Jordan Gateway #235</span><br />
+          <span>South Jordan, Utah</span><br />
+          <span>84095</span>
+        </address>
+      </mat-card-content>
+    </mat-card>
+    <!-- MAINTENANCE -->
+    <mat-card>
+      <mat-card-title>Maintenance</mat-card-title>
+      <mat-card-content>
+        <span>No open requests</span>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="primary">Create</button>
+        <button mat-stroked-button color="accent">View</button>
+      </mat-card-actions>
+    </mat-card>
+    <!-- LEASE -->
+    <mat-card>
+      <mat-card-title>Lease</mat-card-title>
+      <mat-card-content>
+        <span>View Lease</span>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="primary">Online</button>
+        <button mat-stroked-button color="accent">Pdf</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>
 
