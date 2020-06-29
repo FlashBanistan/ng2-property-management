@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Maintenance } from './maintenance';
+import { Observable } from 'rxjs';
+import { Maintenance } from './maintenance.interface';
 import { environment } from '../../environments/environment';
+import { MaintenanceCreatePayload } from './maintenance-create/maintenance-create-payload.interface';
+import { PaginatedResponse } from '../shared/interfaces/paginated-response.interface';
 
 @Injectable()
 export class MaintenanceService {
@@ -9,15 +12,15 @@ export class MaintenanceService {
 
   constructor(private http: HttpClient) {}
 
-  getMaintenanceList() {
-    return this.http.get(this.maintenanceUrl);
+  getMaintenanceList(): Observable<PaginatedResponse<Maintenance>> {
+    return this.http.get<PaginatedResponse<Maintenance>>(this.maintenanceUrl);
   }
 
-  getMaintenanceItem(id) {
-    return this.http.get(this.maintenanceUrl);
+  getMaintenanceItem(id: string): Observable<Maintenance> {
+    return this.http.get<Maintenance>(this.maintenanceUrl);
   }
 
-  createMaintenanceItem(item) {
-    return this.http.post<any>(this.maintenanceUrl, item);
+  createMaintenanceItem(payload: MaintenanceCreatePayload): Observable<Maintenance> {
+    return this.http.post<Maintenance>(this.maintenanceUrl, payload);
   }
 }

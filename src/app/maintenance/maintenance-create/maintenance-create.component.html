@@ -1,27 +1,30 @@
-<mat-card>
-  <mat-card-title>Request Maintenance</mat-card-title>
-  <mat-card-content>
-    <mat-label>Description</mat-label>
-    <mat-form-field>
-      <textarea
-        matInput
-        cdkTextareaAutosize
-        #autosize="cdkTextareaAutosize"
-        cdkAutosizeMinRows="5"
-        cdkAutosizeMaxRows="8"
-      ></textarea>
-    </mat-form-field>
+<form [formGroup]="maintenanceForm" (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-title>Request Maintenance</mat-card-title>
+    <mat-card-content>
+      <mat-label>Description</mat-label>
+      <mat-form-field>
+        <textarea
+          matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="5"
+          cdkAutosizeMaxRows="8"
+          formControlName="description"
+        ></textarea>
+      </mat-form-field>
 
-    <div>
-      <mat-label>Permission to enter: </mat-label>
-      <mat-radio-group>
-        <mat-radio-button value="auto">Yes</mat-radio-button>
-        <mat-radio-button value="always">No</mat-radio-button>
-      </mat-radio-group>
-    </div>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-flat-button type="submit" color="primary">Create</button>
-    <button mat-stroked-button type="button" color="accent" (click)="goBack()">Go Back</button>
-  </mat-card-actions>
-</mat-card>
+      <div>
+        <mat-label>Permission to enter: </mat-label>
+        <mat-radio-group formControlName="permissionToEnter">
+          <mat-radio-button [value]="true">Yes</mat-radio-button>
+          <mat-radio-button [value]="false">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button type="submit" color="primary" [disabled]="maintenanceForm.invalid">Create</button>
+      <button mat-stroked-button type="button" color="accent" (click)="goBack()">Go Back</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

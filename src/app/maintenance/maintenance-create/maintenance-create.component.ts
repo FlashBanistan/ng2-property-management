@@ -1,30 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Maintenance } from '../../maintenance/maintenance';
+import { MaintenanceCreatePayload } from './maintenance-create-payload.interface';
 import { MaintenanceService } from '../../maintenance/maintenance.service';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { finalize } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { AppUrl } from 'app/shared/enums/app-url.enum';
 
 @Component({
   selector: 'app-maintenance-create',
   templateUrl: './maintenance-create.component.html',
   styleUrls: ['./maintenance-create.component.scss'],
 })
-export class MaintenanceCreateComponent {
-  model = new Maintenance();
+export class MaintenanceCreateComponent implements OnInit {
+  loading: boolean;
+  maintenanceForm: FormGroup;
 
-  constructor(private _location: Location, private _maintenanceService: MaintenanceService) {}
+  constructor(
+    private location: Location,
+    private router: Router,
+    private maintenanceService: MaintenanceService,
+    private fb: FormBuilder
+  ) {}
 
-  onSubmit(): void {
-    this._maintenanceService.createMaintenanceItem(this.model).subscribe(
-      (res) => {
-        this.model = new Maintenance();
-      },
-      (err) => {
-        console.log('Failure: ', err);
-      }
-    );
+  ngOnInit() {
+    this.createMaintenanceForm();
+  }
+
+  onSubmit() {
+    const payload: MaintenanceCreatePayload = this.maintenanceForm.value;
+    this.loading = true;
+    this.maintenanceService
+      .createMaintenanceItem(payload)
+      .pipe(finalize(() => (this.loading = false)))
+      .subscribe(() => this.router.navigate([AppUrl.MAINTENANCE_LIST]));
   }
 
   goBack() {
-    this._location.back();
+    this.location.back();
+  }
+
+  private createMaintenanceForm() {
+    this.maintenanceForm = this.fb.group({
+      description: ['', [Validators.required]],
+      permissionToEnter: [null, [Validators.required]],
+    });
   }
 }
