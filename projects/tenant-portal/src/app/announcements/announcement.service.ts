@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { AnnouncementList } from './announcement-list/announcement-list.interface';
 import { Announcement } from './announcement-detail/announcement.interface';

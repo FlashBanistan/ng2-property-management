@@ -37,7 +37,6 @@
     "jasmine-core": "~3.5.0",
     "protractor": "~7.0.0",
     "rxjs": "^6.5.5",
-    "rxjs-compat": "^6.5.5",
     "tslib": "^2.0.0",
     "tslint": "~6.1.0",
     "zone.js": "~0.10.3"
