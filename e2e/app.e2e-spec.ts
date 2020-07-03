@@ -1,6 +1,6 @@
 import { PropertyManagementPage } from './app.po';
 
-describe('property-management App', () => {
+describe('tenant-portal App', () => {
   let page: PropertyManagementPage;
 
   beforeEach(() => {

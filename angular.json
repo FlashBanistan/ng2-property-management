@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "property-management": {
+    "tenant-portal": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "property-management:build"
+            "browserTarget": "tenant-portal:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "property-management:build:production"
+              "browserTarget": "tenant-portal:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "property-management:build"
+            "browserTarget": "tenant-portal:build"
           }
         },
         "test": {
@@ -85,7 +85,7 @@
         }
       }
     },
-    "property-management-e2e": {
+    "tenant-portal-e2e": {
       "root": "e2e",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -94,7 +94,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "property-management:serve"
+            "devServerTarget": "tenant-portal:serve"
           }
         },
         "lint": {
@@ -107,7 +107,7 @@
       }
     }
   },
-  "defaultProject": "property-management",
+  "defaultProject": "tenant-portal",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

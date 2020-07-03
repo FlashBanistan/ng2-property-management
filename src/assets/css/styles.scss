@@ -11,23 +11,19 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$property-management-primary: mat-palette($mat-indigo);
-$property-management-accent: mat-palette($mat-pink, A200, A100, A400);
+$tenant-portal-primary: mat-palette($mat-indigo);
+$tenant-portal-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$property-management-warn: mat-palette($mat-red);
+$tenant-portal-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$property-management-theme: mat-light-theme(
-  $property-management-primary,
-  $property-management-accent,
-  $property-management-warn
-);
+$tenant-portal-theme: mat-light-theme($tenant-portal-primary, $tenant-portal-accent, $tenant-portal-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($property-management-theme);
+@include angular-material-theme($tenant-portal-theme);
 
 @import url('./_flex.scss');
 @import url('./_utility.scss');
