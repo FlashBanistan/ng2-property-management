@@ -1,0 +1,24 @@
+<div class="login-container" [style.background-image]="'url(' + backgroundUrl + ')'">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <label class="title">
+        <h1>
+          <img width="175px" src="../../assets/images/logo_transparent.png" alt="logo" />
+        </h1>
+        <h2 class="welcome">Login</h2>
+      </label>
+      <div class="input-group">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+        <button mat-flat-button type="submit" color="primary" [disabled]="loginForm.invalid">LOGIN</button>
+        <button mat-stroked-button type="button" color="accent">SIGNUP</button>
+      </div>
+    </mat-card>
+  </form>
+</div>

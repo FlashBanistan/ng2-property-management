@@ -253,9 +253,7 @@
               "projects/propertium-common/tsconfig.lib.json",
               "projects/propertium-common/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

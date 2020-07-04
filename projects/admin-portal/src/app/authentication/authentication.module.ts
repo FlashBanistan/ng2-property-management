@@ -11,7 +11,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [LoginContainerComponent],
-  imports: [RouterModule.forChild(routes), CommonModule, PropertiumLoginPageModule],
+  imports: [CommonModule, RouterModule.forChild(routes), PropertiumLoginPageModule],
   exports: [RouterModule],
 })
 export class AuthenticationModule {}

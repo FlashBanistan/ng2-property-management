@@ -1,0 +1,26 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.title {
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group > button:not(:last-child) {
+  margin-bottom: 0.5rem;
+}

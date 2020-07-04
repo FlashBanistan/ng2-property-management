@@ -1,1 +1,2 @@
-export * from './lib/propertium-login-page/public-api';
+export * from './lib/propertium-auth/public-api';
+export * from './lib/material-defaults/public-api';

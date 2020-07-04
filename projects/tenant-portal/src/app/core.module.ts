@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { SharedModule } from './shared/shared.module';
@@ -16,7 +15,7 @@ import { matDialogDefaultOptions } from './shared/material-defaults/mat-dialog-d
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, BrowserAnimationsModule, HttpClientModule, SharedModule],
+  imports: [CommonModule, HttpClientModule, SharedModule],
   exports: [CommonModule, SharedModule],
   providers: [
     ChargeService,
