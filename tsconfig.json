@@ -11,7 +11,10 @@
       "path": "./projects/tenant-portal/tsconfig.app.json"
     },
     {
-      "path": "./projects/admin-portal/tsconfig.spec.json"
+      "path": "./projects/admin-portal/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/propertium-common/tsconfig.lib.json"
     }
   ]
 }
