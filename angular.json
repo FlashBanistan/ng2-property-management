@@ -4,29 +4,34 @@
   "newProjectRoot": "projects",
   "projects": {
     "tenant-portal": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "projects/tenant-portal",
       "sourceRoot": "projects/tenant-portal/src",
-      "projectType": "application",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/tenant-portal",
             "index": "projects/tenant-portal/src/index.html",
             "main": "projects/tenant-portal/src/main.ts",
-            "tsConfig": "projects/tenant-portal/tsconfig.app.json",
             "polyfills": "projects/tenant-portal/src/polyfills.ts",
+            "tsConfig": "projects/tenant-portal/tsconfig.app.json",
+            "aot": true,
             "assets": ["projects/tenant-portal/src/assets", "projects/tenant-portal/src/favicon.png"],
             "styles": ["projects/tenant-portal/src/assets/css/styles.scss"],
             "scripts": ["node_modules/@webcomponents/custom-elements/custom-elements.min.js"]
           },
           "configurations": {
             "production": {
-              "budgets": [
+              "fileReplacements": [
                 {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
+                  "replace": "libs/shared/environments/environment.ts",
+                  "with": "libs/shared/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -34,14 +39,14 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "fileReplacements": [
+              "budgets": [
                 {
-                  "replace": "libs/shared/environments/environment.ts",
-                  "with": "libs/shared/environments/environment.prod.ts"
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10mb"
                 }
               ]
             }
@@ -68,12 +73,12 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "projects/tenant-portal/src/test.ts",
-            "karmaConfig": "./karma.conf.js",
             "polyfills": "projects/tenant-portal/src/polyfills.ts",
             "tsConfig": "projects/tenant-portal/tsconfig.spec.json",
-            "scripts": ["node_modules/@webcomponents/custom-elements/custom-elements.min.js"],
+            "karmaConfig": "projects/tenant-portal/karma.conf.js",
+            "assets": ["projects/tenant-portal/src/assets", "src/favicon.png"],
             "styles": ["projects/tenant-portal/src/assets/css/styles.scss"],
-            "assets": ["projects/tenant-portal/src/assets", "src/favicon.png"]
+            "scripts": ["node_modules/@webcomponents/custom-elements/custom-elements.min.js"]
           }
         },
         "lint": {
@@ -216,14 +221,5 @@
       }
     }
   },
-  "defaultProject": "tenant-portal",
-  "schematics": {
-    "@schematics/angular:component": {
-      "prefix": "app",
-      "style": "scss"
-    },
-    "@schematics/angular:directive": {
-      "prefix": "app"
-    }
-  }
+  "defaultProject": "tenant-portal"
 }
