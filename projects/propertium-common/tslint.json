@@ -1,5 +1,5 @@
 {
-  "extends": "../../tslint.json",
+  "extends": "../../tslint.base.json",
   "rules": {
     "directive-selector": [true, "attribute", "propertium", "camelCase"],
     "component-selector": [true, "element", "propertium", "kebab-case"]
