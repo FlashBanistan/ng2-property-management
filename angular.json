@@ -224,7 +224,7 @@
       "projectType": "library",
       "root": "projects/propertium-common",
       "sourceRoot": "projects/propertium-common/src",
-      "prefix": "lib",
+      "prefix": "propertium",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
