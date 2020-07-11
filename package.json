@@ -6,7 +6,7 @@
     "ng": "ng",
     "start:tenant": "ng serve --project tenant-portal --port 4200",
     "start:admin": "ng serve --project admin-portal --port 4201",
-    "start:propertium-common": "ng build --project propertium-common --watch",
+    "start:propertium-common": "ng build --project propertium-common --prod --watch",
     "build:tenant": "ng build --project tenant-portal",
     "build:admin": "ng build --project admin-portal",
     "test:tenant": "ng test --project tenant-portal",
@@ -15,7 +15,8 @@
     "lint:admin": "ng lint --project admin-portal",
     "e2e:tenant": "ng e2e --project tenant-portal",
     "e2e:admin": "ng e2e --project admin-portal",
-    "bundle-report": "webpack-bundle-analyzer dist/stats.json"
+    "bundle-report": "webpack-bundle-analyzer dist/stats.json",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
