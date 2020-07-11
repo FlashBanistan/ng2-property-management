@@ -32,7 +32,6 @@
     "@angular/platform-server": "^10.0.2",
     "@angular/router": "^10.0.2",
     "@auth0/angular-jwt": "^4.2.0",
-    "@propertium/common": "file:dist/propertium-common/propertium-common-0.0.1.tgz",
     "@webcomponents/custom-elements": "^1.4.1",
     "core-js": "^2.6.11",
     "jasmine-core": "~3.5.0",
