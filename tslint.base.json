@@ -18,7 +18,7 @@
     "label-position": true,
     "max-line-length": [true, 140],
     "member-access": false,
-    "member-ordering": [true, { "order": "instance-sandwich", "alphabetize": true }],
+    "member-ordering": [true, { "order": "instance-sandwich" }],
     "no-arg": true,
     "no-bitwise": true,
     "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
