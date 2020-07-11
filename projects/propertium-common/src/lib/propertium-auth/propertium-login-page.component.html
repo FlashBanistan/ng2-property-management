@@ -3,9 +3,9 @@
     <mat-card>
       <label class="title">
         <h1>
-          <img width="175px" src="../../assets/images/logo_transparent.png" alt="logo" />
+          <img width="175px" [src]="logoUrl" alt="logo" />
         </h1>
-        <h2 class="welcome">Login</h2>
+        <h2 class="welcome">{{ loginTitle }}</h2>
       </label>
       <div class="input-group">
         <mat-form-field>

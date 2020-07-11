@@ -8,6 +8,8 @@ import { LoginCredentials } from '@propertium/common';
 })
 export class LoginContainerComponent implements OnInit {
   loginBackgroundUrl = '../../../assets/images/login-background.jpg';
+  logoUrl = '../../../assets/images/logo_transparent.png';
+  loginTitle = 'Admin Login';
   constructor() {}
 
   ngOnInit() {}

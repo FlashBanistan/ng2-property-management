@@ -8,10 +8,11 @@ import { LoginCredentials } from './login-credentials.interface';
   styleUrls: ['./propertium-login-page.component.scss'],
 })
 export class PropertiumLoginPageComponent implements OnInit {
-  loginForm: FormGroup;
-
   @Input() backgroundUrl: string;
+  @Input() logoUrl: string;
+  @Input() loginTitle: string;
   @Output() login = new EventEmitter<LoginCredentials>();
+  loginForm: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
@@ -25,7 +26,7 @@ export class PropertiumLoginPageComponent implements OnInit {
 
   private initializeLoginForm(): void {
     this.loginForm = this.fb.group({
-      email: ['', Validators.email],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
   }
