@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { LoginCredentials } from '@propertium/common';
 import { environment } from '../../environments/environment';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { LoginCredentials } from './login-credentials.interface';
 import { AppUrl } from '../shared/enums/app-url.enum';
 
 export interface Token {
@@ -15,15 +15,17 @@ export interface Token {
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
+  token$: Observable<Token>;
   private baseUrl: string = environment.baseUrl + '/auth';
   private jwtHelper: JwtHelperService = new JwtHelperService();
   private _token: BehaviorSubject<Token> = new BehaviorSubject(null);
+
+  constructor(private http: HttpClient, private router: Router) {
+    this.token$ = this._token.asObservable();
+  }
   get token(): Token {
     return this._token.getValue();
   }
-  token$ = this._token.asObservable();
-
-  constructor(private http: HttpClient, private router: Router) {}
 
   getTokenFromServer(creds: LoginCredentials): Observable<Token> {
     return this.http.post<Token>(`${this.baseUrl}/get_token/`, creds).pipe(
