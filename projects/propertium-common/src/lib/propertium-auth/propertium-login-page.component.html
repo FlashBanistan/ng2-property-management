@@ -14,7 +14,13 @@
         </mat-form-field>
         <mat-form-field>
           <mat-label>Password</mat-label>
-          <input matInput type="password" formControlName="password" />
+          <input matInput [type]="passwordInputType" formControlName="password" />
+          <button type="button" mat-button matSuffix mat-icon-button (click)="togglePasswordInputType()">
+            <mat-icon *ngIf="passwordInputType === 'password'; else hidePasswordIcon">visibility</mat-icon>
+            <ng-template #hidePasswordIcon>
+              <mat-icon>visibility_off</mat-icon>
+            </ng-template>
+          </button>
         </mat-form-field>
         <button mat-flat-button type="submit" color="primary" [disabled]="loginForm.invalid">LOGIN</button>
         <button mat-stroked-button type="button" color="accent">SIGNUP</button>

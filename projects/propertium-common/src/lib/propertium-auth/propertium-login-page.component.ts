@@ -13,6 +13,7 @@ export class PropertiumLoginPageComponent implements OnInit {
   @Input() loginTitle: string;
   @Output() login = new EventEmitter<LoginCredentials>();
   loginForm: FormGroup;
+  passwordInputType = 'password';
 
   constructor(private fb: FormBuilder) {}
 
@@ -22,6 +23,10 @@ export class PropertiumLoginPageComponent implements OnInit {
 
   onSubmit(): void {
     this.login.emit(this.loginForm.value);
+  }
+
+  togglePasswordInputType() {
+    this.passwordInputType = this.passwordInputType === 'password' ? 'text' : 'password';
   }
 
   private initializeLoginForm(): void {
