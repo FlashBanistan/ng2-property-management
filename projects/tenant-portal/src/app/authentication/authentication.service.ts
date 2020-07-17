@@ -28,7 +28,7 @@ export class AuthenticationService {
   }
 
   getTokenFromServer(creds: LoginCredentials): Observable<Token> {
-    return this.http.post<Token>(`${this.baseUrl}/get_token/`, creds).pipe(
+    return this.http.post<Token>(`${this.baseUrl}/get_token/tenant/`, creds).pipe(
       tap((token) => {
         this.setAuthToken(token);
       })
