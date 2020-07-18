@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { PropertiumLoginPageModule } from '@propertium/common';
-import { LoginContainerComponent } from './login-container/login-container.component';
+import { LoginContainerComponent } from './login-container.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login' },
