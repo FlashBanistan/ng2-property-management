@@ -1,35 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { MaintenanceService } from '../../maintenance/maintenance.service';
+import { PaginatedResponse } from '../../shared/interfaces/paginated-response.interface';
+import { Maintenance } from '../maintenance.interface';
 
 @Component({
   selector: 'app-maintenance-list',
   templateUrl: './maintenance-list.component.html',
   styleUrls: ['./maintenance-list.component.scss'],
 })
-export class MaintenanceListComponent {
-  displayedColumns: string[] = ['Date', 'Description', 'Status'];
-  tableData: any[] = [
-    {
-      dateCreated: '10/23/2017',
-      description: 'Door handle completely fell off.',
-      status: 'Pending',
-    },
-    {
-      dateCreated: '10/14/2017',
-      description: 'Bathroom faucet is leaking even when closed all the way.',
-      status: 'Complete',
-    },
-    {
-      dateCreated: '09/18/2017',
-      description: 'Kitchen cabinet hinge has become detached.',
-      status: 'Complete',
-    },
-    {
-      dateCreated: '10/23/2017',
-      description: 'Dishwasher is making a whirring sound then shuts down.',
-      status: 'Complete',
-    },
-  ];
+export class MaintenanceListComponent implements OnInit {
+  displayedColumns: string[] = ['Date', 'Description', 'Permission to Enter', 'Status', 'Completed On'];
+  paginatedMaintenanceRequests$: Observable<PaginatedResponse<Maintenance>>;
 
   constructor(private maintenanceService: MaintenanceService) {}
+
+  ngOnInit() {
+    this.paginatedMaintenanceRequests$ = this.maintenanceService.getMaintenanceList();
+  }
 }
