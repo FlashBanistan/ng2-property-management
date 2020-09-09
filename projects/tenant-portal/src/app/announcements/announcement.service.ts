@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { shareReplay } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { PaginatedResponse } from '../shared/interfaces/paginated-response.interface';
 import { Announcement } from './announcement-detail/announcement.interface';
-import { shareReplay } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class AnnouncementService {
@@ -15,7 +15,9 @@ export class AnnouncementService {
 
   fetchAnnouncements(): Observable<PaginatedResponse<Announcement>> {
     if (!this.announcements$) {
-      this.announcements$ = this.http.get<PaginatedResponse<Announcement>>(this.announcementUrl).pipe(shareReplay(1));
+      this.announcements$ = this.http
+        .get<PaginatedResponse<Announcement>>(`${this.announcementUrl}`)
+        .pipe(shareReplay(1));
     }
     return this.announcements$;
   }

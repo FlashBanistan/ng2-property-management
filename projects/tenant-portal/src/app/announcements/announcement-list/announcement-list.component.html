@@ -1,11 +1,11 @@
 <mat-card>
   <mat-card-title>Announcements</mat-card-title>
-  <mat-card-content>
-    <mat-list *ngIf="announcements$ | async as announcements">
-      <mat-list-item *ngFor="let announcement of announcements.results">
+  <mat-card-content *ngIf="announcements$ | async as announcements">
+    <mat-list>
+      <mat-list-item *ngFor="let announcement of announcements.results" (click)="openAnnouncement(announcement)">
         <h3 matLine>{{ announcement.title }}</h3>
         <p matLine>{{ announcement.dateCreated | date }}</p>
-        <small matLine matRipple (click)="openAnnouncement(announcement)">Read...</small>
+        <small matLine>Read...</small>
       </mat-list-item>
     </mat-list>
   </mat-card-content>
