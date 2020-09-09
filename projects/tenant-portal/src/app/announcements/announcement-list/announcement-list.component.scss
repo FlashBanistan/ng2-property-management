@@ -1,5 +1,7 @@
 mat-card {
   mat-card-content {
+    max-height: 448px;
+    overflow-y: auto;
     mat-list {
       mat-list-item {
         cursor: pointer;
