@@ -1,6 +1,6 @@
 <button mat-flat-button color="primary" routerLink="/connect/maintenance/create">Request</button>
 
-<table style="width: 100%" mat-table [dataSource]="(paginatedMaintenanceRequests$ | async).results">
+<table *ngIf="paginatedMaintenanceRequests$ | async as requests" mat-table [dataSource]="requests.results">
   <ng-container matColumnDef="Date">
     <th mat-header-cell *matHeaderCellDef>Date</th>
     <td mat-cell *matCellDef="let element">{{ element.dateCreated | date: 'medium' }}</td>

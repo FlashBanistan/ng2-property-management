@@ -1,0 +1,12 @@
+<div class="card">
+  <mat-card>
+    <mat-card-title>Maintenance</mat-card-title>
+    <mat-card-content>
+      <span>{{ numOfPendingRequests$ | async }} open requests</span>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary" (click)="onRequestClicked()">Request</button>
+      <button mat-stroked-button color="accent" (click)="onViewClicked()">View</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

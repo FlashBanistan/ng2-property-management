@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Location } from '@angular/common';
 import { MaintenanceCreatePayload } from './maintenance-create-payload.interface';
 import { MaintenanceService } from '../../maintenance/maintenance.service';
@@ -11,6 +11,7 @@ import { AppUrl } from '../../shared/enums/app-url.enum';
   selector: 'app-maintenance-create',
   templateUrl: './maintenance-create.component.html',
   styleUrls: ['./maintenance-create.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MaintenanceCreateComponent implements OnInit {
   loading: boolean;

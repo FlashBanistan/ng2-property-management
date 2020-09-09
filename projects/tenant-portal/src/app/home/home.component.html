@@ -3,8 +3,8 @@
   <div class="card">
     <mat-card>
       <mat-card-content>
-        <mat-card-title style="display: flex; justify-content: space-between; align-items: center;"
-          ><span>Your current balance: <span style="color: #60b515;">$0.00</span></span>
+        <mat-card-title style="display: flex; justify-content: space-between; align-items: center"
+          ><span>Your current balance: <span style="color: #60b515">$0.00</span></span>
           <mat-icon
             matTooltip="Your balance reflects current and overdue charges, late fees, and any other charges as outlined in your rental agreement"
             >info</mat-icon
@@ -12,7 +12,7 @@
         >
         <div class="card-title d-flex justify-content-even"></div>
 
-        <table style="width: 100%;" mat-table [dataSource]="tableData">
+        <table style="width: 100%" mat-table [dataSource]="tableData">
           <ng-container matColumnDef="Description">
             <th mat-header-cell *matHeaderCellDef>Description</th>
             <td mat-cell *matCellDef="let element">{{ element.item }}</td>
@@ -34,12 +34,10 @@
     </mat-card>
   </div>
   <!-- ANNOUNCEMENTS -->
-  <div class="card">
-    <app-announcement-list></app-announcement-list>
-  </div>
+  <app-announcement-list></app-announcement-list>
   <!-- ADDRESS / MAINTENANCE / LEASE -->
-  <div class="card">
-    <!-- ADDRESS-->
+  <!-- ADDRESS-->
+  <div>
     <mat-card>
       <mat-card-title>Address</mat-card-title>
       <mat-card-content>
@@ -53,32 +51,19 @@
   </div>
 
   <!-- MAINTENANCE -->
-  <div class="card">
-    <mat-card>
-      <mat-card-title>Maintenance</mat-card-title>
-      <mat-card-content>
-        <span>No open requests</span>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-flat-button color="primary">Create</button>
-        <button mat-stroked-button color="accent">View</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
+  <app-maintenance-dashboard></app-maintenance-dashboard>
 
   <!-- LEASE -->
-  <div class="card">
-    <mat-card>
-      <mat-card-title>Lease</mat-card-title>
-      <mat-card-content>
-        <span>View Lease</span>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-flat-button color="primary">Online</button>
-        <button mat-stroked-button color="accent">Pdf</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
+  <mat-card>
+    <mat-card-title>Lease</mat-card-title>
+    <mat-card-content>
+      <span>View Lease</span>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary">Online</button>
+      <button mat-stroked-button color="accent">Pdf</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
 
 <!-- Create Maintanance Request Modal -->
