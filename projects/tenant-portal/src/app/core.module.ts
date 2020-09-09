@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { SharedModule } from './shared/shared.module';
-
 import { ChargeService } from './charges/charge.service';
 import { LeaseService } from './leases/lease.service';
 
@@ -15,8 +13,8 @@ import { matDialogDefaultOptions } from './shared/material-defaults/mat-dialog-d
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, HttpClientModule, SharedModule],
-  exports: [CommonModule, SharedModule],
+  imports: [CommonModule, HttpClientModule],
+  exports: [],
   providers: [
     ChargeService,
     LeaseService,
